@@ -389,7 +389,7 @@
  <joint name="prismaticlink0_to_prismaticlink1" type="floating"> 
   <parent link="prismaticlink0"/> 
   <child link="prismaticlink1"/> 
-  <origin xyz="0.0 0.0 0.2" rpy="0.0 -0.0 0.0"/> 
+  <origin xyz="0.0 0.0 0.198" rpy="0.0 -0.0 0.0"/> 
  </joint> 
 
  <link name="point7"> 
