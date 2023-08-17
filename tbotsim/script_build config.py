@@ -81,7 +81,7 @@ tbot.place_all([0,1,2,3,4])
 tbot.save(os.path.join(absolute_path, 'pickle/tetherbot.pkl'), overwrite = True)
 
 # create urdf files
-#tb2urdf(tbot, prefix = '', packagename = 'ros2_tetherbot', filepath = os.path.join(absolute_path, 'urdf'))
+tb2urdf(tbot, prefix = '', packagename = 'ros2_tetherbot', filepath = os.path.join(absolute_path, 'urdf'))
 
 #vi = TetherbotVisualizer(tbot)
 #vi.run()
