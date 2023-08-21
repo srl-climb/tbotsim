@@ -7,6 +7,7 @@ absolute_path = os.path.dirname(__file__)
 
 # create holds
 hold_positions = np.array([[0.527,1.585,0.002],[0.827,1.285,0.002],[0.827,0.385,0.002],[0.077,0.535,0.002],[0.077,1.435,0.002]])
+
 holds = []
 
 for position in hold_positions:
@@ -39,6 +40,7 @@ arm = TbRPPArm(T_local = [0,0,0.167],
 anchorpoint_positions = np.array([[0.285,0,0.008],[0.220,-0.130,0.008],[-0.220,-0.120,0.008],[-0.220,0.120,0.008],
                                   [0.220,0.130,0.008],[0.285,0,0.121],[0.220,-0.130,0.121],[-0.220,-0.120,0.121],
                                   [-0.220,0.120,0.121],[0.220,0.130,0.121]])
+
 anchorpoints = []
 
 for position in anchorpoint_positions:
@@ -72,19 +74,19 @@ for i in range(10):
 
 # create tetherbot
 tbot = TbTetherbot(platform = platform, grippers = grippers, tethers = tethers, wall = wall, 
-                   mapping = [[0,0],[0,5],[1,1],[1,6],[2,2],[2,7],[3,3],[3,8],[4,4],[4,9]],
-                   aorder = Ring([4,3,2,1,0]), #indices of the grippers counter clockwise
+                   mapping = [[0,0],[1,1],[2,2],[3,3],[4,4],[0,5],[1,6],[2,7],[3,8],[4,9]], #[[0,0],[0,5],[1,1],[1,6],[2,2],[2,7],[3,3],[3,8],[4,4],[4,9]],
+                   aorder = Ring([4,3,2,1,0]), #indices of the grippers counter clockwise 
                    W = hyperRectangle(np.array([5,5,5,0.5,0.5,0.5]), np.array([-5,-5,-5,-0.5,-0.5,-0.5])))
 tbot.place_all([0,1,2,3,4])
+
+vi = TetherbotVisualizer(tbot)
+vi.run()
 
 # create pickle file
 tbot.save(os.path.join(absolute_path, 'pickle/tetherbot.pkl'), overwrite = True)
 
 # create urdf files
 tb2urdf(tbot, prefix = '', packagename = 'ros2_tetherbot', filepath = os.path.join(absolute_path, 'urdf'))
-
-#vi = TetherbotVisualizer(tbot)
-#vi.run()
 
 # create light pickle file
 tbot.remove_all_geometries()
