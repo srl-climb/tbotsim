@@ -6,7 +6,8 @@ import numpy as np
 absolute_path = os.path.dirname(__file__)
 
 # create holds
-hold_positions = np.array([[0.527,1.585,0.002],[0.827,1.285,0.002],[0.827,0.385,0.002],[0.077,0.535,0.002],[0.077,1.435,0.002]])
+hold_positions = np.array([[0.527,1.285,0.002],[0.827,0.985,0.002],[0.827,0.185,0.002],[0.077,0.235,0.002],[0.077,1.135,0.002],
+                           [0.527,1.585,0.002],[0.827,1.285,0.002],[0.827,0.385,0.002],[0.077,0.535,0.002],[0.077,1.435,0.002]])
 
 holds = []
 
@@ -46,7 +47,7 @@ anchorpoints = []
 for position in anchorpoint_positions:
     anchorpoints.append(TbAnchorPoint(T_local = position))
 
-platform = TbPlatform(T_local = [0.423,1.020,0.068,0,0,90],
+platform = TbPlatform(T_local = [0.423,0.820,0.068,0,0,90],
                       arm = arm , 
                       anchorpoints = anchorpoints,
                       depthsensor = TbDepthsensor(T_local = [-0.27645,0,0.14625,0,180,0]),
@@ -76,17 +77,17 @@ for i in range(10):
 tbot = TbTetherbot(platform = platform, grippers = grippers, tethers = tethers, wall = wall, 
                    mapping = [[0,0],[1,1],[2,2],[3,3],[4,4],[0,5],[1,6],[2,7],[3,8],[4,9]], #[[0,0],[0,5],[1,1],[1,6],[2,2],[2,7],[3,3],[3,8],[4,4],[4,9]],
                    aorder = Ring([4,3,2,1,0]), #indices of the grippers counter clockwise 
-                   W = hyperRectangle(np.array([5,5,5,0.5,0.5,0.5]), np.array([-5,-5,-5,-0.5,-0.5,-0.5])))
+                   W = hyperRectangle(np.array([1,1,0,0,0,0.1]), np.array([-1,-1,-0,-0,-0,-0.1])))
 tbot.place_all([0,1,2,3,4])
 
-vi = TetherbotVisualizer(tbot)
-vi.run()
+#vi = TetherbotVisualizer(tbot)
+#vi.run()
 
 # create pickle file
 tbot.save(os.path.join(absolute_path, 'pickle/tetherbot.pkl'), overwrite = True)
 
 # create urdf files
-tb2urdf(tbot, prefix = '', packagename = 'ros2_tetherbot', filepath = os.path.join(absolute_path, 'urdf'))
+tb2urdf(tbot, prefix = '', stlpath = 'package://tbotros_description/desc/', filepath = os.path.join(absolute_path, 'urdf'))
 
 # create light pickle file
 tbot.remove_all_geometries()
