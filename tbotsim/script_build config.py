@@ -6,7 +6,7 @@ import numpy as np
 absolute_path = os.path.dirname(__file__)
 
 # create holds
-hold_positions = np.array([[0.527,1.285,0.002],[0.827,0.985,0.002],[0.827,0.185,0.002],[0.077,0.235,0.002],[0.077,1.135,0.002],
+hold_positions = np.array([[0.527,1.285,0.002],[0.827,0.985,0.002],[0.827,0.085,0.002],[0.077,0.235,0.002],[0.077,1.135,0.002],
                            [0.527,1.585,0.002],[0.827,1.285,0.002],[0.827,0.385,0.002],[0.077,0.535,0.002],[0.077,1.435,0.002]])
 
 holds = []
@@ -80,8 +80,8 @@ tbot = TbTetherbot(platform = platform, grippers = grippers, tethers = tethers, 
                    W = hyperRectangle(np.array([1,1,0,0,0,0.1]), np.array([-1,-1,-0,-0,-0,-0.1])))
 tbot.place_all([0,1,2,3,4])
 
-#vi = TetherbotVisualizer(tbot)
-#vi.run()
+vi = TetherbotVisualizer(tbot)
+vi.run()
 
 # create pickle file
 tbot.save(os.path.join(absolute_path, 'pickle/tetherbot.pkl'), overwrite = True)

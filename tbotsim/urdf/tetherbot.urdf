@@ -484,7 +484,7 @@
  <joint name="wall0_to_hold2" type="fixed"> 
   <parent link="wall0"/> 
   <child link="hold2"/> 
-  <origin xyz="0.827 0.185 0.002" rpy="0.0 -0.0 0.0"/> 
+  <origin xyz="0.827 0.085 0.002" rpy="0.0 -0.0 0.0"/> 
  </joint> 
 
  <link name="hold3"> 
