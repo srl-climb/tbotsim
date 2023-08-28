@@ -14,7 +14,7 @@ holds = []
 for position in hold_positions:
     holds.append(TbHold(T_local = position, 
                         geometries = [TbTrianglemesh(filename=os.path.join(absolute_path, 'stl/Tetherbot_Wall_Dock Hold.stl'))],
-                        hoverpoint = TbHoverPoint(T_local = [0,0,0.039]),
+                        hoverpoint = TbHoverPoint(T_local = [0,0,0.069]),
                         grippoint = TbGripPoint(T_local = [0,0,0.029])))
 
 # create wall
@@ -57,7 +57,7 @@ platform = TbPlatform(T_local = [0.423,0.820,0.068,0,0,90],
 grippers = []
 
 for i in range(5):
-    grippers.append(TbGripper(hoverpoint = TbHoverPoint(T_local = [0,0,0.153]),
+    grippers.append(TbGripper(hoverpoint = TbHoverPoint(T_local = [0,0,0.183]),
                               dockpoint = TbDockPoint(T_local = [0,0,0.143]),
                               anchorpoint = TbAnchorPoint(T_local = [0,0,0.0815]),
                               grippoint = TbGripPoint(T_local = [0,0,0.029]),
@@ -73,25 +73,31 @@ for i in range(10):
                             f_max = 100))
 
 
-# create tetherbot
+# create tetherbot file
+mapping = [[0,0],[1,1],[2,2],[3,3],[4,4],[0,5],[1,6],[2,7],[3,8],[4,9]]
+aorder = Ring([4,3,2,1,0]) #indices of the grippers counter clockwise 
+W = hyperRectangle(np.array([1,1,0,0,0,0.1]), np.array([-1,-1,-0,-0,-0,-0.1]))
 tbot = TbTetherbot(platform = platform, grippers = grippers, tethers = tethers, wall = wall, 
-                   mapping = [[0,0],[1,1],[2,2],[3,3],[4,4],[0,5],[1,6],[2,7],[3,8],[4,9]], #[[0,0],[0,5],[1,1],[1,6],[2,2],[2,7],[3,3],[3,8],[4,4],[4,9]],
-                   aorder = Ring([4,3,2,1,0]), #indices of the grippers counter clockwise 
-                   W = hyperRectangle(np.array([1,1,0,0,0,0.1]), np.array([-1,-1,-0,-0,-0,-0.1])))
+                   mode_2d = True, 
+                   mapping = mapping,
+                   aorder = aorder, 
+                   W = W)
 tbot.place_all([0,1,2,3,4])
-
-vi = TetherbotVisualizer(tbot)
-vi.run()
-
-# create pickle file
 tbot.save(os.path.join(absolute_path, 'pickle/tetherbot.pkl'), overwrite = True)
+
+#vi = TetherbotVisualizer(tbot)
+#vi.run()
 
 # create urdf files
 tb2urdf(tbot, prefix = '', stlpath = 'package://tbotros_description/desc/', filepath = os.path.join(absolute_path, 'urdf'))
 
-# create light pickle file
-tbot.remove_all_geometries()
-tbot.save(os.path.join(absolute_path, 'pickle/tetherbot_light.pkl'), overwrite = True)
+# create light tetherbot file
+tbot_light = TbTetherbot(platform = platform, grippers = grippers, tethers = tethers, wall = wall, 
+                   mapping = mapping,
+                   aorder = aorder, 
+                   W = W)
+tbot_light.remove_all_geometries()
+tbot_light.save(os.path.join(absolute_path, 'pickle/tetherbot_light.pkl'), overwrite = True)
 
 """ TbTetherbotplot(tbot)
 show() """
