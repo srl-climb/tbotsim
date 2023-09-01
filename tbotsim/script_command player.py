@@ -1,6 +1,6 @@
 from tbotlib import CommandList, TetherbotVisualizer, TbTetherbot
 
-commands_path = 'C:/Users/ngkla/Desktop/Git/tbotsim/tbotsim/commands_2_2.yaml'
+commands_path = 'C:/Users/ngkla/Desktop/Git/tbotsim/tbotsim/commands.yaml'
 tbot_path = 'C:/Users/ngkla/Desktop/Git/tbotsim/tbotsim/pickle/tetherbot.pkl'
 
 commands = CommandList.load(commands_path)

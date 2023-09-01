@@ -8,6 +8,9 @@ planner_config_file = 'C:/Users/ngkla/Desktop/Git/tbotsim/tbotsim/planner.yaml'
 simulation_dt, platform2pose, platform2configuration, arm2pose, local_planner, global_planner  = yaml2planner(planner_config_file)
 tbot: TbTetherbot = TbTetherbot.load(tbot_desc_file)
 tbot_light : TbTetherbot = TbTetherbot.load(tbot_light_desc_file)
+for tether in tbot_light.tethers:
+    tether._f_max = 150
+tbot_light.W = hyperRectangle(np.array([3,3,0,0,0,0.33]),-np.array([3,3,0,0,0,0.33]))
 tbot.debug_print()
 tbot_light.debug_print()
 print(tbot.W)
