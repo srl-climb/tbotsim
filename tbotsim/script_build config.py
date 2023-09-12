@@ -14,7 +14,7 @@ holds = []
 for position in hold_positions:
     holds.append(TbHold(T_local = position, 
                         geometries = [TbTrianglemesh(filename=os.path.join(absolute_path, 'stl/Tetherbot_Wall_Dock Hold.stl'))],
-                        hoverpoint = TbHoverPoint(T_local = [0,0,0.069]),
+                        hoverpoint = TbHoverPoint(T_local = [0,0,0.084]),
                         grippoint = TbGripPoint(T_local = [0,0,0.029])))
 
 # create wall
@@ -57,7 +57,7 @@ platform = TbPlatform(T_local = [0.423,0.820,0.068,0,0,90],
 grippers = []
 
 for i in range(5):
-    grippers.append(TbGripper(hoverpoint = TbHoverPoint(T_local = [0,0,0.183]),
+    grippers.append(TbGripper(hoverpoint = TbHoverPoint(T_local = [0,0,0.195]),
                               dockpoint = TbDockPoint(T_local = [0,0,0.143]),
                               anchorpoint = TbAnchorPoint(T_local = [0,0,0.0815]),
                               grippoint = TbGripPoint(T_local = [0,0,0.029]),
@@ -85,8 +85,8 @@ tbot = TbTetherbot(platform = platform, grippers = grippers, tethers = tethers, 
 tbot.place_all([0,1,2,3,4])
 tbot.save(os.path.join(absolute_path, 'pickle/tetherbot.pkl'), overwrite = True)
 
-#vi = TetherbotVisualizer(tbot)
-#vi.run()
+vi = TetherbotVisualizer(tbot)
+vi.run()
 
 # create urdf files
 tb2urdf(tbot, prefix = '', stlpath = 'package://tbotros_description/desc/', filepath = os.path.join(absolute_path, 'urdf'))

@@ -56,24 +56,24 @@ global:
   goal_dist: 0.01 # maximum distance to goal
   iter_max: 5000 # max iterations of Astar algorithm 
   workspace: # workspace analysis for finding a stable configuration
-   padding: [-0.1,-0.1,0,-180,-180,-45] # x, y, z, thetax, thetay, thetaz padding of the analysis space
-   scale: [0.2,0.2,0.1,45,45,45] # x, y, z, thetax, thetay, thetaz scale (= resolution) of the analysis space
-   mode: "first" # "first", "max"
+   padding: [-0.2,-0.2,0,-180,-180,0] # x, y, z, thetax, thetay, thetaz padding of the analysis space
+   scale: [0.1,0.1,1,45,45,10] # x, y, z, thetax, thetay, thetaz scale (= resolution) of the analysis space
+   mode: "max" # "first", "max"
    mode_2d: True
  planner:
   fast_platform_to_configuration:
    workspace:
-    padding: [-0.1,-1.0,0,-180,-180,-45] # x, y, z, thetax, thetay, thetaz padding of the analysis space
-    scale: [0.1,0.1,0.1,45,45,7.5] # x, y, z, thetax, thetay, thetaz scale (= resolution) of the analysis space
+    padding: [-0.2,-0.2,0,-180,-180,0] # x, y, z, thetax, thetay, thetaz padding of the analysis space
+    scale: [0.1,0.1,1,45,45,10] # x, y, z, thetax, thetay, thetaz scale (= resolution) of the analysis space
     mode: "max" # "first", "max"
     mode_2d: True
   platform_to_gripper:
    graph:
-    goal_skew: 1 # maximum skew to goal
+    goal_skew: 1.5 # maximum skew to goal
     directions: [0.01,0.01,0,1,0,0] # x, y, z, thetax, thetay, thetaz search direction and resolution
-    iter_max: 25 # max iterations of Astar algorithm
+    iter_max: 20000 # max iterations of Astar algorithm
   platform_to_hold:
    graph:
-    goal_skew: 1 # maximum skew to goal
+    goal_skew: 1.5 # maximum skew to goal
     directions: [0.01,0.01,0,1,0,0] # x, y, z, thetax, thetay, thetaz search direction and resolution
-    iter_max: 25 # max iterations of Astar algorithm
+    iter_max: 20000 # max iterations of Astar algorithm

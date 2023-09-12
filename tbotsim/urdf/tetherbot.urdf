@@ -581,7 +581,7 @@
  <joint name="hold0_to_hoverpoint0" type="fixed"> 
   <parent link="hold0"/> 
   <child link="hoverpoint0"/> 
-  <origin xyz="0.0 0.0 0.069" rpy="0.0 -0.0 0.0"/> 
+  <origin xyz="0.0 0.0 0.084" rpy="0.0 -0.0 0.0"/> 
  </joint> 
 
  <link name="grippoint0"> 
@@ -649,7 +649,7 @@
  <joint name="hold1_to_hoverpoint1" type="fixed"> 
   <parent link="hold1"/> 
   <child link="hoverpoint1"/> 
-  <origin xyz="0.0 0.0 0.069" rpy="0.0 -0.0 0.0"/> 
+  <origin xyz="0.0 0.0 0.084" rpy="0.0 -0.0 0.0"/> 
  </joint> 
 
  <link name="grippoint1"> 
@@ -717,7 +717,7 @@
  <joint name="hold2_to_hoverpoint2" type="fixed"> 
   <parent link="hold2"/> 
   <child link="hoverpoint2"/> 
-  <origin xyz="0.0 0.0 0.069" rpy="0.0 -0.0 0.0"/> 
+  <origin xyz="0.0 0.0 0.084" rpy="0.0 -0.0 0.0"/> 
  </joint> 
 
  <link name="grippoint2"> 
@@ -785,7 +785,7 @@
  <joint name="hold3_to_hoverpoint3" type="fixed"> 
   <parent link="hold3"/> 
   <child link="hoverpoint3"/> 
-  <origin xyz="0.0 0.0 0.069" rpy="0.0 -0.0 0.0"/> 
+  <origin xyz="0.0 0.0 0.084" rpy="0.0 -0.0 0.0"/> 
  </joint> 
 
  <link name="grippoint3"> 
@@ -853,7 +853,7 @@
  <joint name="hold4_to_hoverpoint4" type="fixed"> 
   <parent link="hold4"/> 
   <child link="hoverpoint4"/> 
-  <origin xyz="0.0 0.0 0.069" rpy="0.0 -0.0 0.0"/> 
+  <origin xyz="0.0 0.0 0.084" rpy="0.0 -0.0 0.0"/> 
  </joint> 
 
  <link name="grippoint4"> 
@@ -921,7 +921,7 @@
  <joint name="hold5_to_hoverpoint5" type="fixed"> 
   <parent link="hold5"/> 
   <child link="hoverpoint5"/> 
-  <origin xyz="0.0 0.0 0.069" rpy="0.0 -0.0 0.0"/> 
+  <origin xyz="0.0 0.0 0.084" rpy="0.0 -0.0 0.0"/> 
  </joint> 
 
  <link name="grippoint5"> 
@@ -989,7 +989,7 @@
  <joint name="hold6_to_hoverpoint6" type="fixed"> 
   <parent link="hold6"/> 
   <child link="hoverpoint6"/> 
-  <origin xyz="0.0 0.0 0.069" rpy="0.0 -0.0 0.0"/> 
+  <origin xyz="0.0 0.0 0.084" rpy="0.0 -0.0 0.0"/> 
  </joint> 
 
  <link name="grippoint6"> 
@@ -1057,7 +1057,7 @@
  <joint name="hold7_to_hoverpoint7" type="fixed"> 
   <parent link="hold7"/> 
   <child link="hoverpoint7"/> 
-  <origin xyz="0.0 0.0 0.069" rpy="0.0 -0.0 0.0"/> 
+  <origin xyz="0.0 0.0 0.084" rpy="0.0 -0.0 0.0"/> 
  </joint> 
 
  <link name="grippoint7"> 
@@ -1125,7 +1125,7 @@
  <joint name="hold8_to_hoverpoint8" type="fixed"> 
   <parent link="hold8"/> 
   <child link="hoverpoint8"/> 
-  <origin xyz="0.0 0.0 0.069" rpy="0.0 -0.0 0.0"/> 
+  <origin xyz="0.0 0.0 0.084" rpy="0.0 -0.0 0.0"/> 
  </joint> 
 
  <link name="grippoint8"> 
@@ -1193,7 +1193,7 @@
  <joint name="hold9_to_hoverpoint9" type="fixed"> 
   <parent link="hold9"/> 
   <child link="hoverpoint9"/> 
-  <origin xyz="0.0 0.0 0.069" rpy="0.0 -0.0 0.0"/> 
+  <origin xyz="0.0 0.0 0.084" rpy="0.0 -0.0 0.0"/> 
  </joint> 
 
  <link name="grippoint9"> 
@@ -1278,7 +1278,7 @@
  <joint name="gripper0_to_hoverpoint10" type="fixed"> 
   <parent link="gripper0"/> 
   <child link="hoverpoint10"/> 
-  <origin xyz="0.0 0.0 0.183" rpy="0.0 -0.0 0.0"/> 
+  <origin xyz="0.0 0.0 0.195" rpy="0.0 -0.0 0.0"/> 
  </joint> 
 
  <link name="grippoint10"> 
@@ -1397,7 +1397,7 @@
  <joint name="gripper1_to_hoverpoint11" type="fixed"> 
   <parent link="gripper1"/> 
   <child link="hoverpoint11"/> 
-  <origin xyz="0.0 0.0 0.183" rpy="0.0 -0.0 0.0"/> 
+  <origin xyz="0.0 0.0 0.195" rpy="0.0 -0.0 0.0"/> 
  </joint> 
 
  <link name="grippoint11"> 
@@ -1516,7 +1516,7 @@
  <joint name="gripper2_to_hoverpoint12" type="fixed"> 
   <parent link="gripper2"/> 
   <child link="hoverpoint12"/> 
-  <origin xyz="0.0 0.0 0.183" rpy="0.0 -0.0 0.0"/> 
+  <origin xyz="0.0 0.0 0.195" rpy="0.0 -0.0 0.0"/> 
  </joint> 
 
  <link name="grippoint12"> 
@@ -1635,7 +1635,7 @@
  <joint name="gripper3_to_hoverpoint13" type="fixed"> 
   <parent link="gripper3"/> 
   <child link="hoverpoint13"/> 
-  <origin xyz="0.0 0.0 0.183" rpy="0.0 -0.0 0.0"/> 
+  <origin xyz="0.0 0.0 0.195" rpy="0.0 -0.0 0.0"/> 
  </joint> 
 
  <link name="grippoint13"> 
@@ -1754,7 +1754,7 @@
  <joint name="gripper4_to_hoverpoint14" type="fixed"> 
   <parent link="gripper4"/> 
   <child link="hoverpoint14"/> 
-  <origin xyz="0.0 0.0 0.183" rpy="0.0 -0.0 0.0"/> 
+  <origin xyz="0.0 0.0 0.195" rpy="0.0 -0.0 0.0"/> 
  </joint> 
 
  <link name="grippoint14"> 

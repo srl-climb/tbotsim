@@ -10,14 +10,15 @@ tbot: TbTetherbot = TbTetherbot.load(tbot_desc_file)
 tbot_light : TbTetherbot = TbTetherbot.load(tbot_light_desc_file)
 for tether in tbot_light.tethers:
     tether._f_max = 150
-tbot_light.W = hyperRectangle(np.array([3,3,0,0,0,0.33]),-np.array([3,3,0,0,0,0.33]))
+
 tbot.debug_print()
 tbot_light.debug_print()
 print(tbot.W)
 print(tbot_light.W)
 
 commands = CommandList()
-_, commands, exitflag = local_planner.plan(tbot_light, grip_idx = 3, hold_idx =  8, commands = commands)
+
+""" _, commands, exitflag = local_planner.plan(tbot_light, grip_idx = 3, hold_idx =  8, commands = commands)
 if exitflag == False: exit()
 _, commands, exitflag = local_planner.plan(tbot_light, grip_idx = 2, hold_idx =  7, commands = commands)
 if exitflag == False: exit()
@@ -26,8 +27,10 @@ if exitflag == False: exit()
 _, commands, exitflag = local_planner.plan(tbot_light, grip_idx = 4, hold_idx =  9, commands = commands)
 if exitflag == False: exit()
 _, commands, exitflag = local_planner.plan(tbot_light, grip_idx = 1, hold_idx =  6, commands = commands)
+if exitflag == False: exit() """
+
+_, commands, exitflag = global_planner.plan(tbot_light, [0,1,2,3,4],[5,6,7,8,9], commands = commands)
 if exitflag == False: exit()
 
-
 print('Path found, saving commands')
-commands.save('C:/Users/ngkla/Desktop/Git/tbotsim/tbotsim/commands.yaml', overwrite=True)
+commands.save('C:/Users/ngkla/Desktop/Git/tbotsim/tbotsim/commands_global.yaml', overwrite=True)
