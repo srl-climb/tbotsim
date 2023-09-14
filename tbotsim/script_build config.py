@@ -95,7 +95,9 @@ tb2urdf(tbot, prefix = '', stlpath = 'package://tbotros_description/desc/', file
 tbot_light = TbTetherbot(platform = platform, grippers = grippers, tethers = tethers, wall = wall, 
                    mapping = mapping,
                    aorder = aorder, 
-                   W = W)
+                   W = W,
+                   l_min = 0.12,
+                   l_max = 2)
 tbot_light.remove_all_geometries()
 tbot_light.save(os.path.join(absolute_path, 'pickle/tetherbot_light.pkl'), overwrite = True)
 
