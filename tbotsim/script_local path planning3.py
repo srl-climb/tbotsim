@@ -15,27 +15,28 @@ tbot.debug_print()
 tbot_light.debug_print()
 
 T = TransformMatrix()
-T.r = [0.047, 0.652, 0.068]
+T.r = [0.47, 0.652, 0.068]
 T.q = [0.735, -0.001, -0.001, 0.678]
+tbot_light.platform.T_world = T
 tbot.platform.T_world = T
 
-print(tbot.stability())
+print(tbot_light.stability())
 
 commands = CommandList()
 
 _, commands, exitflag = local_planner.plan(tbot_light, grip_idx = 3, hold_idx =  8, commands = commands)
 if exitflag == False: exit()
-""" _, commands, exitflag = local_planner.plan(tbot_light, grip_idx = 2, hold_idx =  7, commands = commands)
+_, commands, exitflag = local_planner.plan(tbot_light, grip_idx = 2, hold_idx =  7, commands = commands)
 if exitflag == False: exit()
 _, commands, exitflag = local_planner.plan(tbot_light, grip_idx = 0, hold_idx = 5, commands = commands)
 if exitflag == False: exit()
 _, commands, exitflag = local_planner.plan(tbot_light, grip_idx = 4, hold_idx =  9, commands = commands)
 if exitflag == False: exit()
 _, commands, exitflag = local_planner.plan(tbot_light, grip_idx = 1, hold_idx =  6, commands = commands)
-if exitflag == False: exit() """
-
-_, commands, exitflag = global_planner.plan(tbot_light, [0,1,2,3,4],[5,6,7,8,9], commands = commands)
 if exitflag == False: exit()
 
+""" _, commands, exitflag = global_planner.plan(tbot_light, [0,1,2,3,4],[5,6,7,8,9], commands = commands)
+if exitflag == False: exit() """
+
 print('Path found, saving commands')
-commands.save('C:/Users/ngkla/Desktop/Git/tbotsim/tbotsim/commands_global.yaml', overwrite=True)
+commands.save('C:/Users/ngkla/Desktop/Git/tbotsim/tbotsim/commands2.yaml', overwrite=True)

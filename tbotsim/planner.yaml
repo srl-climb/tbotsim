@@ -24,7 +24,7 @@ platform:
     iter_max: 20000 # max iterations of Astar algorithm
    workspace: # workspace analysis for finding a stable configuration
     padding: [-0.2,-0.2,0,-180,-180,0] # x, y, z, thetax, thetay, thetaz padding of the analysis space
-    scale: [0.1,0.1,1,45,45,10] # x, y, z, thetax, thetay, thetaz scale (= resolution) of the analysis space
+    scale: [0.05,0.05,1,45,45,10] # x, y, z, thetax, thetay, thetaz scale (= resolution) of the analysis space
     mode: "max" # "first", "max"
     mode_2d: True
   platform_to_gripper:
