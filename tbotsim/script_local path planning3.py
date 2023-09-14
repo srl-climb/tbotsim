@@ -1,4 +1,4 @@
-from tbotlib import yaml2planner, TbTetherbot, TetherbotVisualizer, CommandList, hyperRectangle, tic, toc
+from tbotlib import yaml2planner, TbTetherbot, TetherbotVisualizer, CommandList, hyperRectangle, tic, toc, TransformMatrix
 import numpy as np
 
 tbot_desc_file = 'C:/Users/ngkla/Desktop/Git/tbotsim/tbotsim/pickle/tetherbot.pkl'
@@ -13,14 +13,19 @@ for tether in tbot_light.tethers:
 
 tbot.debug_print()
 tbot_light.debug_print()
-print(tbot.W)
-print(tbot_light.W)
+
+T = TransformMatrix()
+T.r = [0.047, 0.652, 0.068]
+T.q = [0.735, -0.001, -0.001, 0.678]
+tbot.platform.T_world = T
+
+print(tbot.stability())
 
 commands = CommandList()
 
-""" _, commands, exitflag = local_planner.plan(tbot_light, grip_idx = 3, hold_idx =  8, commands = commands)
+_, commands, exitflag = local_planner.plan(tbot_light, grip_idx = 3, hold_idx =  8, commands = commands)
 if exitflag == False: exit()
-_, commands, exitflag = local_planner.plan(tbot_light, grip_idx = 2, hold_idx =  7, commands = commands)
+""" _, commands, exitflag = local_planner.plan(tbot_light, grip_idx = 2, hold_idx =  7, commands = commands)
 if exitflag == False: exit()
 _, commands, exitflag = local_planner.plan(tbot_light, grip_idx = 0, hold_idx = 5, commands = commands)
 if exitflag == False: exit()
