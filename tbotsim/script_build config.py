@@ -76,7 +76,7 @@ for i in range(10):
 # create tetherbot file
 mapping = [[0,0],[1,1],[2,2],[3,3],[4,4],[0,5],[1,6],[2,7],[3,8],[4,9]]
 aorder = Ring([4,3,2,1,0]) #indices of the grippers counter clockwise 
-W = hyperRectangle(np.array([3,3,0,0,0,0.33]), np.array([-3,-3,-0,-0,-0,-0.33]))
+W = hyperRectangle(np.array([2,2,0,0,0,0.22]), np.array([-2,-2,-0,-0,-0,-0.22]))
 tbot = TbTetherbot(platform = platform, grippers = grippers, tethers = tethers, wall = wall, 
                    mode_2d = True, 
                    mapping = mapping,
