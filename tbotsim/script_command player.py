@@ -1,6 +1,6 @@
 from tbotlib import CommandList, TetherbotVisualizer, TbTetherbot
 
-commands_path = '/home/climb/ros2_ws/commands/command0.pkl'
+commands_path = '/home/climb/ros2_ws/commands/commands0.pkl'
 tbot_path = '/home/climb/ros2_ws/src/tbotros_description/tbotros_description/desc/tetherbot/tetherbot.pkl'
 commands_path = 'C:/Users/ngkla/Desktop/Git/tbotsim/tbotsim/commands2.yaml'
 tbot_path = 'C:/Users/ngkla/Desktop/Git/tbotsim/tbotsim/pickle/tetherbot.pkl'
@@ -17,7 +17,7 @@ while commands and vi.opened:
         command = commands.pop(0)
         command.print()
     done = command.do(tetherbot=tbot, step = 200)
-    print(tbot.stability())
+    print(tbot.l)
 vi.run()
 
 for command in commands: 
