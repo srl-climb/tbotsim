@@ -81,7 +81,10 @@ tbot = TbTetherbot(platform = platform, grippers = grippers, tethers = tethers, 
                    mode_2d = True, 
                    mapping = mapping,
                    aorder = aorder, 
-                   W = W)
+                   W = W,
+                   tether_collision_margin = 0.055,
+                   l_min = 0.12,
+                   l_max = 2)
 tbot.place_all([0,1,2,3,4])
 tbot.save(os.path.join(absolute_path, 'pickle/tetherbot.pkl'), overwrite = True)
 
@@ -96,6 +99,7 @@ tbot_light = TbTetherbot(platform = platform, grippers = grippers, tethers = tet
                    mapping = mapping,
                    aorder = aorder, 
                    W = W,
+                   tether_collision_margin = 0.055,
                    l_min = 0.12,
                    l_max = 2)
 tbot_light.remove_all_geometries()

@@ -8,13 +8,15 @@ tbot_path = 'C:/Users/ngkla/Desktop/Git/tbotsim/tbotsim/pickle/tetherbot.pkl'
 commands = CommandList.load(commands_path)
 tbot: TbTetherbot = TbTetherbot.load(tbot_path)
 
-print(tbot.W)
 vi = TetherbotVisualizer(tbot)
 done = True
-while commands and vi.opened:
+while vi.opened:
     vi.update()
     if done:
-        command = commands.pop(0)
+        if commands:
+            command = commands.pop(0)
+        else:
+            break
         command.print()
     done = command.do(tetherbot=tbot, step = 200)
     print(tbot.l)
