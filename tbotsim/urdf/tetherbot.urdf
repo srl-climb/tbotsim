@@ -28,7 +28,7 @@
  <joint name="map_to_gripper0" type="floating"> 
   <parent link="map"/> 
   <child link="gripper0"/> 
-  <origin xyz="0.0 1.751244922780715e-17 0.143" rpy="3.141592653589793 -0.0 0.0"/> 
+  <origin xyz="0.0 0.0 0.0" rpy="0.0 -0.0 0.0"/> 
  </joint> 
 
  <link name="gripper1"> 
@@ -323,23 +323,6 @@
   <origin xyz="0.0 0.0 0.0" rpy="0.0 -0.0 0.0"/> 
  </joint> 
 
- <link name="dockpoint0"> 
-  <visual> 
-   <geometry> 
-    <sphere radius="0.01"/> 
-   </geometry> 
-   <material name="Cyan"> 
-    <color rgba="0 1.0 1.0 1.0"/> 
-   </material> 
-  </visual> 
- </link> 
-
- <joint name="revolutelink0_to_dockpoint0" type="fixed"> 
-  <parent link="revolutelink0"/> 
-  <child link="dockpoint0"/> 
-  <origin xyz="0.0 0.0 0.0" rpy="0.0 -0.0 0.0"/> 
- </joint> 
-
  <link name="trianglemesh11"> 
   <visual> 
    <geometry> 
@@ -380,23 +363,6 @@
  <joint name="trianglemesh11_to_point11" type="fixed"> 
   <parent link="trianglemesh11"/> 
   <child link="point11"/> 
-  <origin xyz="0.0 0.0 0.0" rpy="0.0 -0.0 0.0"/> 
- </joint> 
-
- <link name="dockpoint1"> 
-  <visual> 
-   <geometry> 
-    <sphere radius="0.01"/> 
-   </geometry> 
-   <material name="Cyan"> 
-    <color rgba="0 1.0 1.0 1.0"/> 
-   </material> 
-  </visual> 
- </link> 
-
- <joint name="prismaticlink0_to_dockpoint1" type="fixed"> 
-  <parent link="prismaticlink0"/> 
-  <child link="dockpoint1"/> 
   <origin xyz="0.0 0.0 0.0" rpy="0.0 -0.0 0.0"/> 
  </joint> 
 
@@ -441,23 +407,6 @@
   <parent link="trianglemesh12"/> 
   <child link="point12"/> 
   <origin xyz="0.0 0.0 0.0" rpy="0.0 -0.0 0.0"/> 
- </joint> 
-
- <link name="dockpoint2"> 
-  <visual> 
-   <geometry> 
-    <sphere radius="0.01"/> 
-   </geometry> 
-   <material name="Cyan"> 
-    <color rgba="0 1.0 1.0 1.0"/> 
-   </material> 
-  </visual> 
- </link> 
-
- <joint name="prismaticlink1_to_dockpoint2" type="fixed"> 
-  <parent link="prismaticlink1"/> 
-  <child link="dockpoint2"/> 
-  <origin xyz="0.0 0.0 0.0" rpy="3.141592653589793 -0.0 0.0"/> 
  </joint> 
 
  <link name="trianglemesh13"> 
@@ -1366,7 +1315,7 @@
   <origin xyz="0.0 0.0 0.0815" rpy="0.0 -0.0 0.0"/> 
  </joint> 
 
- <link name="dockpoint3"> 
+ <link name="dockpoint0"> 
   <visual> 
    <geometry> 
     <sphere radius="0.01"/> 
@@ -1377,10 +1326,10 @@
   </visual> 
  </link> 
 
- <joint name="gripper0_to_dockpoint3" type="fixed"> 
+ <joint name="gripper0_to_dockpoint0" type="fixed"> 
   <parent link="gripper0"/> 
-  <child link="dockpoint3"/> 
-  <origin xyz="0.0 0.0 0.143" rpy="0.0 -0.0 0.0"/> 
+  <child link="dockpoint0"/> 
+  <origin xyz="0.0 0.0 0.143" rpy="3.141592653589793 -0.0 0.0"/> 
  </joint> 
 
  <link name="marker0"> 
@@ -1485,7 +1434,7 @@
   <origin xyz="0.0 0.0 0.0815" rpy="0.0 -0.0 0.0"/> 
  </joint> 
 
- <link name="dockpoint4"> 
+ <link name="dockpoint1"> 
   <visual> 
    <geometry> 
     <sphere radius="0.01"/> 
@@ -1496,10 +1445,10 @@
   </visual> 
  </link> 
 
- <joint name="gripper1_to_dockpoint4" type="fixed"> 
+ <joint name="gripper1_to_dockpoint1" type="fixed"> 
   <parent link="gripper1"/> 
-  <child link="dockpoint4"/> 
-  <origin xyz="0.0 0.0 0.143" rpy="0.0 -0.0 0.0"/> 
+  <child link="dockpoint1"/> 
+  <origin xyz="0.0 0.0 0.143" rpy="3.141592653589793 -0.0 0.0"/> 
  </joint> 
 
  <link name="marker1"> 
@@ -1604,7 +1553,7 @@
   <origin xyz="0.0 0.0 0.0815" rpy="0.0 -0.0 0.0"/> 
  </joint> 
 
- <link name="dockpoint5"> 
+ <link name="dockpoint2"> 
   <visual> 
    <geometry> 
     <sphere radius="0.01"/> 
@@ -1615,10 +1564,10 @@
   </visual> 
  </link> 
 
- <joint name="gripper2_to_dockpoint5" type="fixed"> 
+ <joint name="gripper2_to_dockpoint2" type="fixed"> 
   <parent link="gripper2"/> 
-  <child link="dockpoint5"/> 
-  <origin xyz="0.0 0.0 0.143" rpy="0.0 -0.0 0.0"/> 
+  <child link="dockpoint2"/> 
+  <origin xyz="0.0 0.0 0.143" rpy="3.141592653589793 -0.0 0.0"/> 
  </joint> 
 
  <link name="marker2"> 
@@ -1723,7 +1672,7 @@
   <origin xyz="0.0 0.0 0.0815" rpy="0.0 -0.0 0.0"/> 
  </joint> 
 
- <link name="dockpoint6"> 
+ <link name="dockpoint3"> 
   <visual> 
    <geometry> 
     <sphere radius="0.01"/> 
@@ -1734,10 +1683,10 @@
   </visual> 
  </link> 
 
- <joint name="gripper3_to_dockpoint6" type="fixed"> 
+ <joint name="gripper3_to_dockpoint3" type="fixed"> 
   <parent link="gripper3"/> 
-  <child link="dockpoint6"/> 
-  <origin xyz="0.0 0.0 0.143" rpy="0.0 -0.0 0.0"/> 
+  <child link="dockpoint3"/> 
+  <origin xyz="0.0 0.0 0.143" rpy="3.141592653589793 -0.0 0.0"/> 
  </joint> 
 
  <link name="marker3"> 
@@ -1842,7 +1791,7 @@
   <origin xyz="0.0 0.0 0.0815" rpy="0.0 -0.0 0.0"/> 
  </joint> 
 
- <link name="dockpoint7"> 
+ <link name="dockpoint4"> 
   <visual> 
    <geometry> 
     <sphere radius="0.01"/> 
@@ -1853,10 +1802,10 @@
   </visual> 
  </link> 
 
- <joint name="gripper4_to_dockpoint7" type="fixed"> 
+ <joint name="gripper4_to_dockpoint4" type="fixed"> 
   <parent link="gripper4"/> 
-  <child link="dockpoint7"/> 
-  <origin xyz="0.0 0.0 0.143" rpy="0.0 -0.0 0.0"/> 
+  <child link="dockpoint4"/> 
+  <origin xyz="0.0 0.0 0.143" rpy="3.141592653589793 -0.0 0.0"/> 
  </joint> 
 
  <link name="marker4"> 

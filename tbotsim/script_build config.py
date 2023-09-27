@@ -31,7 +31,6 @@ links.append(TbPrismaticLink(phi=0, alpha=-pi/2, a=0, q0=0.381, qlim=[0.375,0.96
                              )
 
 links.append(TbPrismaticLink(phi=0, alpha=0, a=0, q0=0.198, qlim=[0.074,0.198], 
-                             dockpoint = TbDockPoint(T_local = [0,0,0,180,0,0]),
                              geometries = [TbTrianglemesh(filename=os.path.join(absolute_path, 'stl/Tetherbot_Platform_Arm_Joint 3.stl'))]))
 
 arm = TbRPPArm(T_local = [0,0,0.167],
@@ -59,7 +58,7 @@ grippers = []
 
 for i in range(5):
     grippers.append(TbGripper(hoverpoint = TbHoverPoint(T_local = [0,0,0.195]),
-                              dockpoint = TbDockPoint(T_local = [0,0,0.143]),
+                              dockpoint = TbDockPoint(T_local = [0,0,0.143,180,0,0]),
                               anchorpoint = TbAnchorPoint(T_local = [0,0,0.0815]),
                               grippoint = TbGripPoint(T_local = [0,0,0.029]),
                               marker = TbMarker(T_local= [0,-0.011,0.089,90,0,0]),
@@ -105,6 +104,7 @@ tbot_light = TbTetherbot(platform = platform, grippers = grippers, tethers = tet
                    l_max = 2)
 tbot_light.remove_all_geometries()
 tbot_light.save(os.path.join(absolute_path, 'pickle/tetherbot_light.pkl'), overwrite = True)
- """
-""" TbTetherbotplot(tbot)
+
+""" Tetherbotplot(tbot)
 show()
+ """
