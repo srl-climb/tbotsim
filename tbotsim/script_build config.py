@@ -23,7 +23,7 @@ wall = TbWall(holds = holds,
 
 # create arm
 links = []
-links.append(TbRevoluteLink(q0=0, alpha=-pi/2, a=0, d=0.0435, qlim=[-pi, pi], 
+links.append(TbRevoluteLink(q0=0, alpha=-pi/2, a=0, d=0.0435, qlim=np.deg2rad([-175, 175]), 
                             geometries = [TbTrianglemesh(filename=os.path.join(absolute_path, 'stl/Tetherbot_Platform_Arm_Joint 1.stl'))])
                             )
 links.append(TbPrismaticLink(phi=0, alpha=-pi/2, a=0, q0=0.381, qlim=[0.375,0.961], 
