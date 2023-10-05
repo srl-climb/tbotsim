@@ -23,7 +23,7 @@ wall = TbWall(holds = holds,
 
 # create arm
 links = []
-links.append(TbRevoluteLink(q0=0, alpha=-pi/2, a=0, d=0.0435, qlim=np.deg2rad([-175, 175]), 
+links.append(TbRevoluteLink(q0=0, alpha=-pi/2, a=0, d=0.0435, qlim=np.deg2rad([-175, 175]), # -180+d, 180-d, dead band (d) should be big enough that the arm can not jump over the -180/180 deg threshhold during path planning 
                             geometries = [TbTrianglemesh(filename=os.path.join(absolute_path, 'stl/Tetherbot_Platform_Arm_Joint 1.stl'))])
                             )
 links.append(TbPrismaticLink(phi=0, alpha=-pi/2, a=0, q0=0.381, qlim=[0.375,0.961], 
