@@ -9,8 +9,8 @@ simulation_dt, platform2pose, platform2configuration, arm2pose, local_planner, g
 tbot: TbTetherbot = TbTetherbot.load(tbot_desc_file)
 tbot_light : TbTetherbot = TbTetherbot.load(tbot_light_desc_file)
 
-tbot.debug_print()
-tbot_light.debug_print()
+#tbot.debug_print()
+#tbot_light.debug_print()
 
 T = TransformMatrix()
 T.r = [0.47, 0.652, 0.068]
