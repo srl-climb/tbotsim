@@ -466,7 +466,7 @@
  <joint name="wall0_to_hold0" type="fixed"> 
   <parent link="wall0"/> 
   <child link="hold0"/> 
-  <origin xyz="0.527 1.285 0.002" rpy="0.0 -0.0 0.0"/> 
+  <origin xyz="0.522 1.291 0.002" rpy="0.0 -0.0 0.0"/> 
  </joint> 
 
  <link name="hold1"> 
@@ -475,7 +475,7 @@
  <joint name="wall0_to_hold1" type="fixed"> 
   <parent link="wall0"/> 
   <child link="hold1"/> 
-  <origin xyz="0.827 0.985 0.002" rpy="0.0 -0.0 0.0"/> 
+  <origin xyz="0.832 0.99 0.002" rpy="0.0 -0.0 0.0"/> 
  </joint> 
 
  <link name="hold2"> 
@@ -484,7 +484,7 @@
  <joint name="wall0_to_hold2" type="fixed"> 
   <parent link="wall0"/> 
   <child link="hold2"/> 
-  <origin xyz="0.827 0.085 0.002" rpy="0.0 -0.0 0.0"/> 
+  <origin xyz="0.822 0.086 0.002" rpy="0.0 -0.0 0.0"/> 
  </joint> 
 
  <link name="hold3"> 
@@ -493,7 +493,7 @@
  <joint name="wall0_to_hold3" type="fixed"> 
   <parent link="wall0"/> 
   <child link="hold3"/> 
-  <origin xyz="0.077 0.235 0.002" rpy="0.0 -0.0 0.0"/> 
+  <origin xyz="0.077 0.234 0.002" rpy="0.0 -0.0 0.0"/> 
  </joint> 
 
  <link name="hold4"> 
@@ -502,7 +502,7 @@
  <joint name="wall0_to_hold4" type="fixed"> 
   <parent link="wall0"/> 
   <child link="hold4"/> 
-  <origin xyz="0.077 1.135 0.002" rpy="0.0 -0.0 0.0"/> 
+  <origin xyz="0.079 1.139 0.002" rpy="0.0 -0.0 0.0"/> 
  </joint> 
 
  <link name="hold5"> 
@@ -511,7 +511,7 @@
  <joint name="wall0_to_hold5" type="fixed"> 
   <parent link="wall0"/> 
   <child link="hold5"/> 
-  <origin xyz="0.527 1.585 0.002" rpy="0.0 -0.0 0.0"/> 
+  <origin xyz="0.534 1.586 0.002" rpy="0.0 -0.0 0.0"/> 
  </joint> 
 
  <link name="hold6"> 
@@ -520,7 +520,7 @@
  <joint name="wall0_to_hold6" type="fixed"> 
   <parent link="wall0"/> 
   <child link="hold6"/> 
-  <origin xyz="0.827 1.285 0.002" rpy="0.0 -0.0 0.0"/> 
+  <origin xyz="0.838 1.29 0.002" rpy="0.0 -0.0 0.0"/> 
  </joint> 
 
  <link name="hold7"> 
@@ -529,7 +529,7 @@
  <joint name="wall0_to_hold7" type="fixed"> 
   <parent link="wall0"/> 
   <child link="hold7"/> 
-  <origin xyz="0.827 0.385 0.002" rpy="0.0 -0.0 0.0"/> 
+  <origin xyz="0.835 0.384 0.002" rpy="0.0 -0.0 0.0"/> 
  </joint> 
 
  <link name="hold8"> 
@@ -538,7 +538,7 @@
  <joint name="wall0_to_hold8" type="fixed"> 
   <parent link="wall0"/> 
   <child link="hold8"/> 
-  <origin xyz="0.077 0.535 0.002" rpy="0.0 -0.0 0.0"/> 
+  <origin xyz="0.078 0.537 0.002" rpy="0.0 -0.0 0.0"/> 
  </joint> 
 
  <link name="hold9"> 
@@ -547,7 +547,7 @@
  <joint name="wall0_to_hold9" type="fixed"> 
   <parent link="wall0"/> 
   <child link="hold9"/> 
-  <origin xyz="0.077 1.435 0.002" rpy="0.0 -0.0 0.0"/> 
+  <origin xyz="0.078 1.435 0.002" rpy="0.0 -0.0 0.0"/> 
  </joint> 
 
  <link name="trianglemesh10"> 
