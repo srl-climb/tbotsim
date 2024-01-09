@@ -71,7 +71,7 @@ iter = 25
 
 platform2configuration = FastPlanPlatform2Configuration(workspace = TbWorkspace(padding = [-0.1,-0.1,0,-180,-180,-45], 
                                                                                 scale = [0.2,0.2,0.1,45,45,45], 
-                                                                                mode = 'first')) #max
+                                                                                mode = 'max')) #max
 
 platform2gripper = PlanPlatform2Gripper(graph = TbPlatformAlignGraph(goal_skew = 1, 
                                                                      directions = [0.01,0.01,0,1,0,0], 
@@ -100,7 +100,8 @@ globalplanner = GlobalPlanner(graph = TbGlobalGraph(goal_dist = 0.01,
 
 W       = hyperRectangle(np.array([5,5,5,0.5,0.5,0.5]), np.array([-5,-5,-5,-0.5,-0.5,-0.5]))
 mapping = [[0,0],[0,1],[1,2],[1,3],[3,4],[3,5],[4,6],[4,7],[2,8],[2,9]]
-aorder  = Ring([0,1,3,4,2]) #indices of the grippers counter clockwise
+aorder  = Ring([0,1,3,4,2]) #indices of the grippers counter clockwise #WRONG
+aorder  = Ring([0,2,4,3,1]) #indices of the grippers clockwise (seen from above)
 tethers  = [TbTether.example() for _ in range(10)]
 grippers = [TbGripper.example() for _ in range(5)]
 platform = TbPlatform.example()
@@ -121,6 +122,20 @@ tbot = TbTetherbot(platform=platform, grippers=grippers, tethers=tethers, wall=w
 
 tbot.platform.T_local= TransformMatrix(position)
 tbot.place_all(start)
+
+""" for hold in tbot.wall.holds:
+    print(hold.name)
+    print(hold.r_world)
+
+for gripper in tbot.grippers:
+    print(gripper.name)
+    print(gripper.parent.name)
+    print(gripper.r_world) """
+
+""" print(tbot.grippers[3].name)
+print(tbot.filter_holds(3))
+exit() """
+
 
 """ vi = TetherbotVisualizer(tbot)
 vi.run()
