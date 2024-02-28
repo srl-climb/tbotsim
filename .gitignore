@@ -1,10 +1,2 @@
-
-tbotsim/commands_1.yaml
-tbotsim/commands_2.yaml
-tbotsim/commands_2_2.yaml
-tbotsim/commands.yaml
-tbotsim/commands_global.yaml
-tbotsim/commands2.yaml
-tbotsim/commands_2.yaml
-tbotsim/commands_2.yaml
-tbotsim/commands_2.yaml
+*.yaml
+!tbotsim/script_local path planning3/planner/*.yaml

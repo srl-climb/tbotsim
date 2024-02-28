@@ -1,0 +1,81 @@
+# Parameters for path planning
+# all units in base units
+---
+simulation:
+ dt: 0.02 # timestep
+platform:
+ smoothing:
+  ds: 0.003
+  k: 5      # order of the spline
+ profiler:
+  q_lim: [[-0,2],[-0.002,0.002],[-0.02,0.02]] # position, velocity, acceleration joint limits 
+  iter_max: 500
+ planner:
+  platform_to_pose:
+   graph:
+    goal_dist: 0.015 # maximum distance to goal
+    goal_skew: 1.5 # maximum skew to goal
+    directions: [0.01,0.01,0,1,0,0] # x, y, z, thetax, thetay, thetaz search direction and resolution
+    iter_max: 20000 # max iterations of Astar algorithm
+  platform_to_configuration:
+   graph:
+    goal_dist: 0.025 # maximum distance to goal
+    goal_skew: 2.5 # maximum skew to goal
+    directions: [0.02,0.02,0,2,0,0] # x, y, z, thetax, thetay, thetaz search direction and resolution
+    iter_max: 20000 # max iterations of Astar algorithm
+   workspace: # workspace analysis for finding a stable configuration
+    padding: [-0.2,-0.2,0,-180,-180,0] # x, y, z, thetax, thetay, thetaz padding of the analysis space
+    scale: [0.05,0.05,1,45,45,10] # x, y, z, thetax, thetay, thetaz scale (= resolution) of the analysis space
+    mode: "max" # "first", "max"
+    mode_2d: True
+  platform_to_gripper:
+   graph:
+    goal_skew: 1.5 # maximum skew to goal
+    directions: [0.01,0.01,0,1,0,0] # x, y, z, thetax, thetay, thetaz search direction and resolution
+    iter_max: 20000 # max iterations of Astar algorithm
+  platform_to_hold:
+   graph:
+    goal_skew: 1.5 # maximum skew to goal
+    directions: [0.01,0.01,0,1,0,0] # x, y, z, thetax, thetay, thetaz search direction and resolution
+    iter_max: 20000 # max iterations of Astar algorithm 
+arm:
+ smoothing:
+  ds: 0.005 # approximate distance between points on the spline
+  k: 5      # oder of the spline
+ profiler:
+  q_lim: [[[-3.141592,3.141592],[-0.0872665,0.0872665],[-0.872665,0.872665]],
+          [[0.375,0.961],[-0.005,0.005],[-0.01,0.01]],
+          [[0.074,0.199],[-0.005,0.005],[-0.01,0.01]]] # position, velocity, acceleration joint limits, note: qlim is in radians or meters
+  iter_max: 100
+ planner:
+  arm_to_pose:
+   graph:
+    goal_dist: 0.025 # maximum distance to goal
+    directions: [0.02,0.02,0.01] # x, y, z, thetax, thetay, thetaz search direction and resolution
+    iter_max: 360000 # max iterations of Astar algorithm
+global:
+ graph:
+  goal_dist: 0.01 # maximum distance to goal
+  iter_max: 5000 # max iterations of Astar algorithm 
+  workspace: # workspace analysis for finding a stable configuration
+   padding: [-0.2,-0.2,0,-180,-180,0] # x, y, z, thetax, thetay, thetaz padding of the analysis space
+   scale: [0.1,0.1,1,45,45,10] # x, y, z, thetax, thetay, thetaz scale (= resolution) of the analysis space
+   mode: "max" # "first", "max"
+   mode_2d: True
+ planner:
+  fast_platform_to_configuration:
+   workspace:
+    padding: [-0.2,-0.2,0,-180,-180,0] # x, y, z, thetax, thetay, thetaz padding of the analysis space
+    scale: [0.1,0.1,1,45,45,10] # x, y, z, thetax, thetay, thetaz scale (= resolution) of the analysis space
+    mode: "max" # "first", "max"
+    mode_2d: True
+  platform_to_gripper:
+   graph:
+    goal_skew: 1.5 # maximum skew to goal
+    directions: [0.01,0.01,0,1,0,0] # x, y, z, thetax, thetay, thetaz search direction and resolution
+    iter_max: 20000 # max iterations of Astar algorithm
+  platform_to_hold:
+   graph:
+    goal_skew: 1.5 # maximum skew to goal
+    directions: [0.01,0.01,0,1,0,0] # x, y, z, thetax, thetay, thetaz search direction and resolution
+    iter_max: 20000 # max iterations of Astar algorithm

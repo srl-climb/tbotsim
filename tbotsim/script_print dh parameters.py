@@ -1,7 +1,9 @@
 import tbotlib as tb
 import os
 
-tbot: tb.TbTetherbot = tb.TbTetherbot.load(os.path.join(os.path.dirname(__file__), 'pickle', 'tetherbot.pkl'))
+file = os.path.join(os.path.dirname(__file__), 'pickle', 'tetherbot.pkl')
+
+tbot: tb.TbTetherbot = tb.TbTetherbot.load(file)
 
 print(tbot.platform.arm.T_local.T)
 

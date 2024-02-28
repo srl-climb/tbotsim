@@ -1,0 +1,1862 @@
+<?xml version="1.0"?> 
+
+<robot name="tetherbot0"> 
+
+ <link name="map"/> 
+
+ <link name="platform0"> 
+ </link> 
+
+ <joint name="map_to_platform0" type="floating"> 
+  <parent link="map"/> 
+  <child link="platform0"/> 
+  <origin xyz="0.423 0.82 0.068" rpy="0.0 -0.0 1.5707963267948966"/> 
+ </joint> 
+
+ <link name="wall0"> 
+ </link> 
+
+ <joint name="map_to_wall0" type="fixed"> 
+  <parent link="map"/> 
+  <child link="wall0"/> 
+  <origin xyz="0.0 0.0 0.0" rpy="0.0 -0.0 0.0"/> 
+ </joint> 
+
+ <link name="gripper0"> 
+ </link> 
+
+ <joint name="map_to_gripper0" type="floating"> 
+  <parent link="map"/> 
+  <child link="gripper0"/> 
+  <origin xyz="0.0 0.0 0.0" rpy="0.0 -0.0 0.0"/> 
+ </joint> 
+
+ <link name="gripper1"> 
+ </link> 
+
+ <joint name="map_to_gripper1" type="floating"> 
+  <parent link="map"/> 
+  <child link="gripper1"/> 
+  <origin xyz="0.0 0.0 0.0" rpy="0.0 -0.0 0.0"/> 
+ </joint> 
+
+ <link name="gripper2"> 
+ </link> 
+
+ <joint name="map_to_gripper2" type="floating"> 
+  <parent link="map"/> 
+  <child link="gripper2"/> 
+  <origin xyz="0.0 0.0 0.0" rpy="0.0 -0.0 0.0"/> 
+ </joint> 
+
+ <link name="gripper3"> 
+ </link> 
+
+ <joint name="map_to_gripper3" type="floating"> 
+  <parent link="map"/> 
+  <child link="gripper3"/> 
+  <origin xyz="0.0 0.0 0.0" rpy="0.0 -0.0 0.0"/> 
+ </joint> 
+
+ <link name="gripper4"> 
+ </link> 
+
+ <joint name="map_to_gripper4" type="floating"> 
+  <parent link="map"/> 
+  <child link="gripper4"/> 
+  <origin xyz="0.0 0.0 0.0" rpy="0.0 -0.0 0.0"/> 
+ </joint> 
+
+ <link name="rpparm0"> 
+ </link> 
+
+ <joint name="platform0_to_rpparm0" type="fixed"> 
+  <parent link="platform0"/> 
+  <child link="rpparm0"/> 
+  <origin xyz="0.0 0.0 0.167" rpy="0.0 -0.0 0.0"/> 
+ </joint> 
+
+ <link name="anchorpoint0"> 
+  <visual> 
+   <geometry> 
+    <sphere radius="0.01"/> 
+   </geometry> 
+   <material name="Cyan"> 
+    <color rgba="0 1.0 1.0 1.0"/> 
+   </material> 
+  </visual> 
+ </link> 
+
+ <joint name="platform0_to_anchorpoint0" type="fixed"> 
+  <parent link="platform0"/> 
+  <child link="anchorpoint0"/> 
+  <origin xyz="0.285 0.0 0.008" rpy="0.0 -0.0 0.0"/> 
+ </joint> 
+
+ <link name="anchorpoint1"> 
+  <visual> 
+   <geometry> 
+    <sphere radius="0.01"/> 
+   </geometry> 
+   <material name="Cyan"> 
+    <color rgba="0 1.0 1.0 1.0"/> 
+   </material> 
+  </visual> 
+ </link> 
+
+ <joint name="platform0_to_anchorpoint1" type="fixed"> 
+  <parent link="platform0"/> 
+  <child link="anchorpoint1"/> 
+  <origin xyz="0.22 -0.13 0.008" rpy="0.0 -0.0 0.0"/> 
+ </joint> 
+
+ <link name="anchorpoint2"> 
+  <visual> 
+   <geometry> 
+    <sphere radius="0.01"/> 
+   </geometry> 
+   <material name="Cyan"> 
+    <color rgba="0 1.0 1.0 1.0"/> 
+   </material> 
+  </visual> 
+ </link> 
+
+ <joint name="platform0_to_anchorpoint2" type="fixed"> 
+  <parent link="platform0"/> 
+  <child link="anchorpoint2"/> 
+  <origin xyz="-0.22 -0.12 0.008" rpy="0.0 -0.0 0.0"/> 
+ </joint> 
+
+ <link name="anchorpoint3"> 
+  <visual> 
+   <geometry> 
+    <sphere radius="0.01"/> 
+   </geometry> 
+   <material name="Cyan"> 
+    <color rgba="0 1.0 1.0 1.0"/> 
+   </material> 
+  </visual> 
+ </link> 
+
+ <joint name="platform0_to_anchorpoint3" type="fixed"> 
+  <parent link="platform0"/> 
+  <child link="anchorpoint3"/> 
+  <origin xyz="-0.22 0.12 0.008" rpy="0.0 -0.0 0.0"/> 
+ </joint> 
+
+ <link name="anchorpoint4"> 
+  <visual> 
+   <geometry> 
+    <sphere radius="0.01"/> 
+   </geometry> 
+   <material name="Cyan"> 
+    <color rgba="0 1.0 1.0 1.0"/> 
+   </material> 
+  </visual> 
+ </link> 
+
+ <joint name="platform0_to_anchorpoint4" type="fixed"> 
+  <parent link="platform0"/> 
+  <child link="anchorpoint4"/> 
+  <origin xyz="0.22 0.13 0.008" rpy="0.0 -0.0 0.0"/> 
+ </joint> 
+
+ <link name="anchorpoint5"> 
+  <visual> 
+   <geometry> 
+    <sphere radius="0.01"/> 
+   </geometry> 
+   <material name="Cyan"> 
+    <color rgba="0 1.0 1.0 1.0"/> 
+   </material> 
+  </visual> 
+ </link> 
+
+ <joint name="platform0_to_anchorpoint5" type="fixed"> 
+  <parent link="platform0"/> 
+  <child link="anchorpoint5"/> 
+  <origin xyz="0.285 0.0 0.121" rpy="0.0 -0.0 0.0"/> 
+ </joint> 
+
+ <link name="anchorpoint6"> 
+  <visual> 
+   <geometry> 
+    <sphere radius="0.01"/> 
+   </geometry> 
+   <material name="Cyan"> 
+    <color rgba="0 1.0 1.0 1.0"/> 
+   </material> 
+  </visual> 
+ </link> 
+
+ <joint name="platform0_to_anchorpoint6" type="fixed"> 
+  <parent link="platform0"/> 
+  <child link="anchorpoint6"/> 
+  <origin xyz="0.22 -0.13 0.121" rpy="0.0 -0.0 0.0"/> 
+ </joint> 
+
+ <link name="anchorpoint7"> 
+  <visual> 
+   <geometry> 
+    <sphere radius="0.01"/> 
+   </geometry> 
+   <material name="Cyan"> 
+    <color rgba="0 1.0 1.0 1.0"/> 
+   </material> 
+  </visual> 
+ </link> 
+
+ <joint name="platform0_to_anchorpoint7" type="fixed"> 
+  <parent link="platform0"/> 
+  <child link="anchorpoint7"/> 
+  <origin xyz="-0.22 -0.12 0.121" rpy="0.0 -0.0 0.0"/> 
+ </joint> 
+
+ <link name="anchorpoint8"> 
+  <visual> 
+   <geometry> 
+    <sphere radius="0.01"/> 
+   </geometry> 
+   <material name="Cyan"> 
+    <color rgba="0 1.0 1.0 1.0"/> 
+   </material> 
+  </visual> 
+ </link> 
+
+ <joint name="platform0_to_anchorpoint8" type="fixed"> 
+  <parent link="platform0"/> 
+  <child link="anchorpoint8"/> 
+  <origin xyz="-0.22 0.12 0.121" rpy="0.0 -0.0 0.0"/> 
+ </joint> 
+
+ <link name="anchorpoint9"> 
+  <visual> 
+   <geometry> 
+    <sphere radius="0.01"/> 
+   </geometry> 
+   <material name="Cyan"> 
+    <color rgba="0 1.0 1.0 1.0"/> 
+   </material> 
+  </visual> 
+ </link> 
+
+ <joint name="platform0_to_anchorpoint9" type="fixed"> 
+  <parent link="platform0"/> 
+  <child link="anchorpoint9"/> 
+  <origin xyz="0.22 0.13 0.121" rpy="0.0 -0.0 0.0"/> 
+ </joint> 
+
+ <link name="depthsensor0"> 
+  <visual> 
+   <geometry> 
+    <sphere radius="0.01"/> 
+   </geometry> 
+   <material name="Cyan"> 
+    <color rgba="0 1.0 1.0 1.0"/> 
+   </material> 
+  </visual> 
+ </link> 
+
+ <joint name="platform0_to_depthsensor0" type="fixed"> 
+  <parent link="platform0"/> 
+  <child link="depthsensor0"/> 
+  <origin xyz="-0.27645 0.0 0.14625" rpy="3.141592653589793 1.2246467991473532e-16 3.141592653589793"/> 
+ </joint> 
+
+ <link name="trianglemesh15"> 
+  <visual> 
+   <geometry> 
+    <mesh filename="package://tbotros_description/desc//trianglemesh15.stl" scale="1 1 1"/> 
+   </geometry> 
+   <material name="Cyan"> 
+    <color rgba="0 1.0 1.0 1.0"/> 
+   </material> 
+  </visual> 
+ </link> 
+
+ <joint name="platform0_to_trianglemesh15" type="fixed"> 
+  <parent link="platform0"/> 
+  <child link="trianglemesh15"/> 
+  <origin xyz="0.0 0.0 0.0" rpy="0.0 -0.0 0.0"/> 
+ </joint> 
+
+ <link name="trianglemesh14"> 
+  <visual> 
+   <geometry> 
+    <mesh filename="package://tbotros_description/desc//trianglemesh14.stl" scale="1 1 1"/> 
+   </geometry> 
+   <material name="Cyan"> 
+    <color rgba="0 1.0 1.0 1.0"/> 
+   </material> 
+  </visual> 
+ </link> 
+
+ <joint name="rpparm0_to_trianglemesh14" type="fixed"> 
+  <parent link="rpparm0"/> 
+  <child link="trianglemesh14"/> 
+  <origin xyz="0.0 0.0 0.0" rpy="0.0 -0.0 0.0"/> 
+ </joint> 
+
+ <link name="revolutelink0"> 
+ </link> 
+
+ <joint name="rpparm0_to_revolutelink0" type="floating"> 
+  <parent link="rpparm0"/> 
+  <child link="revolutelink0"/> 
+  <origin xyz="0.0 0.0 0.0435" rpy="-1.5707963267948966 -0.0 0.0"/> 
+ </joint> 
+
+ <link name="point14"> 
+  <visual> 
+   <geometry> 
+    <sphere radius="0.01"/> 
+   </geometry> 
+   <material name="Cyan"> 
+    <color rgba="0 1.0 1.0 1.0"/> 
+   </material> 
+  </visual> 
+ </link> 
+
+ <joint name="trianglemesh14_to_point14" type="fixed"> 
+  <parent link="trianglemesh14"/> 
+  <child link="point14"/> 
+  <origin xyz="0.0 0.0 0.0" rpy="0.0 -0.0 0.0"/> 
+ </joint> 
+
+ <link name="trianglemesh11"> 
+  <visual> 
+   <geometry> 
+    <mesh filename="package://tbotros_description/desc//trianglemesh11.stl" scale="1 1 1"/> 
+   </geometry> 
+   <material name="Cyan"> 
+    <color rgba="0 1.0 1.0 1.0"/> 
+   </material> 
+  </visual> 
+ </link> 
+
+ <joint name="revolutelink0_to_trianglemesh11" type="fixed"> 
+  <parent link="revolutelink0"/> 
+  <child link="trianglemesh11"/> 
+  <origin xyz="0.0 0.0 0.0" rpy="0.0 -0.0 0.0"/> 
+ </joint> 
+
+ <link name="prismaticlink0"> 
+ </link> 
+
+ <joint name="revolutelink0_to_prismaticlink0" type="floating"> 
+  <parent link="revolutelink0"/> 
+  <child link="prismaticlink0"/> 
+  <origin xyz="0.0 0.0 0.381" rpy="-1.5707963267948966 -0.0 0.0"/> 
+ </joint> 
+
+ <link name="point11"> 
+  <visual> 
+   <geometry> 
+    <sphere radius="0.01"/> 
+   </geometry> 
+   <material name="Cyan"> 
+    <color rgba="0 1.0 1.0 1.0"/> 
+   </material> 
+  </visual> 
+ </link> 
+
+ <joint name="trianglemesh11_to_point11" type="fixed"> 
+  <parent link="trianglemesh11"/> 
+  <child link="point11"/> 
+  <origin xyz="0.0 0.0 0.0" rpy="0.0 -0.0 0.0"/> 
+ </joint> 
+
+ <link name="trianglemesh12"> 
+  <visual> 
+   <geometry> 
+    <mesh filename="package://tbotros_description/desc//trianglemesh12.stl" scale="1 1 1"/> 
+   </geometry> 
+   <material name="Cyan"> 
+    <color rgba="0 1.0 1.0 1.0"/> 
+   </material> 
+  </visual> 
+ </link> 
+
+ <joint name="prismaticlink0_to_trianglemesh12" type="fixed"> 
+  <parent link="prismaticlink0"/> 
+  <child link="trianglemesh12"/> 
+  <origin xyz="0.0 0.0 0.0" rpy="0.0 -0.0 0.0"/> 
+ </joint> 
+
+ <link name="prismaticlink1"> 
+ </link> 
+
+ <joint name="prismaticlink0_to_prismaticlink1" type="floating"> 
+  <parent link="prismaticlink0"/> 
+  <child link="prismaticlink1"/> 
+  <origin xyz="0.0 0.0 0.198" rpy="0.0 -0.0 0.0"/> 
+ </joint> 
+
+ <link name="point12"> 
+  <visual> 
+   <geometry> 
+    <sphere radius="0.01"/> 
+   </geometry> 
+   <material name="Cyan"> 
+    <color rgba="0 1.0 1.0 1.0"/> 
+   </material> 
+  </visual> 
+ </link> 
+
+ <joint name="trianglemesh12_to_point12" type="fixed"> 
+  <parent link="trianglemesh12"/> 
+  <child link="point12"/> 
+  <origin xyz="0.0 0.0 0.0" rpy="0.0 -0.0 0.0"/> 
+ </joint> 
+
+ <link name="trianglemesh13"> 
+  <visual> 
+   <geometry> 
+    <mesh filename="package://tbotros_description/desc//trianglemesh13.stl" scale="1 1 1"/> 
+   </geometry> 
+   <material name="Cyan"> 
+    <color rgba="0 1.0 1.0 1.0"/> 
+   </material> 
+  </visual> 
+ </link> 
+
+ <joint name="prismaticlink1_to_trianglemesh13" type="fixed"> 
+  <parent link="prismaticlink1"/> 
+  <child link="trianglemesh13"/> 
+  <origin xyz="0.0 0.0 0.0" rpy="0.0 -0.0 0.0"/> 
+ </joint> 
+
+ <link name="point13"> 
+  <visual> 
+   <geometry> 
+    <sphere radius="0.01"/> 
+   </geometry> 
+   <material name="Cyan"> 
+    <color rgba="0 1.0 1.0 1.0"/> 
+   </material> 
+  </visual> 
+ </link> 
+
+ <joint name="trianglemesh13_to_point13" type="fixed"> 
+  <parent link="trianglemesh13"/> 
+  <child link="point13"/> 
+  <origin xyz="0.0 0.0 0.0" rpy="0.0 -0.0 0.0"/> 
+ </joint> 
+
+ <link name="point15"> 
+  <visual> 
+   <geometry> 
+    <sphere radius="0.01"/> 
+   </geometry> 
+   <material name="Cyan"> 
+    <color rgba="0 1.0 1.0 1.0"/> 
+   </material> 
+  </visual> 
+ </link> 
+
+ <joint name="trianglemesh15_to_point15" type="fixed"> 
+  <parent link="trianglemesh15"/> 
+  <child link="point15"/> 
+  <origin xyz="0.0 0.0 0.0" rpy="0.0 -0.0 0.0"/> 
+ </joint> 
+
+ <link name="hold0"> 
+ </link> 
+
+ <joint name="wall0_to_hold0" type="fixed"> 
+  <parent link="wall0"/> 
+  <child link="hold0"/> 
+  <origin xyz="0.522 1.291 0.002" rpy="0.0 -0.0 0.0"/> 
+ </joint> 
+
+ <link name="hold1"> 
+ </link> 
+
+ <joint name="wall0_to_hold1" type="fixed"> 
+  <parent link="wall0"/> 
+  <child link="hold1"/> 
+  <origin xyz="0.832 0.99 0.002" rpy="0.0 -0.0 0.0"/> 
+ </joint> 
+
+ <link name="hold2"> 
+ </link> 
+
+ <joint name="wall0_to_hold2" type="fixed"> 
+  <parent link="wall0"/> 
+  <child link="hold2"/> 
+  <origin xyz="0.822 0.086 0.002" rpy="0.0 -0.0 0.0"/> 
+ </joint> 
+
+ <link name="hold3"> 
+ </link> 
+
+ <joint name="wall0_to_hold3" type="fixed"> 
+  <parent link="wall0"/> 
+  <child link="hold3"/> 
+  <origin xyz="0.077 0.234 0.002" rpy="0.0 -0.0 0.0"/> 
+ </joint> 
+
+ <link name="hold4"> 
+ </link> 
+
+ <joint name="wall0_to_hold4" type="fixed"> 
+  <parent link="wall0"/> 
+  <child link="hold4"/> 
+  <origin xyz="0.079 1.139 0.002" rpy="0.0 -0.0 0.0"/> 
+ </joint> 
+
+ <link name="hold5"> 
+ </link> 
+
+ <joint name="wall0_to_hold5" type="fixed"> 
+  <parent link="wall0"/> 
+  <child link="hold5"/> 
+  <origin xyz="0.534 1.586 0.002" rpy="0.0 -0.0 0.0"/> 
+ </joint> 
+
+ <link name="hold6"> 
+ </link> 
+
+ <joint name="wall0_to_hold6" type="fixed"> 
+  <parent link="wall0"/> 
+  <child link="hold6"/> 
+  <origin xyz="0.838 1.29 0.002" rpy="0.0 -0.0 0.0"/> 
+ </joint> 
+
+ <link name="hold7"> 
+ </link> 
+
+ <joint name="wall0_to_hold7" type="fixed"> 
+  <parent link="wall0"/> 
+  <child link="hold7"/> 
+  <origin xyz="0.835 0.384 0.002" rpy="0.0 -0.0 0.0"/> 
+ </joint> 
+
+ <link name="hold8"> 
+ </link> 
+
+ <joint name="wall0_to_hold8" type="fixed"> 
+  <parent link="wall0"/> 
+  <child link="hold8"/> 
+  <origin xyz="0.078 0.537 0.002" rpy="0.0 -0.0 0.0"/> 
+ </joint> 
+
+ <link name="hold9"> 
+ </link> 
+
+ <joint name="wall0_to_hold9" type="fixed"> 
+  <parent link="wall0"/> 
+  <child link="hold9"/> 
+  <origin xyz="0.078 1.435 0.002" rpy="0.0 -0.0 0.0"/> 
+ </joint> 
+
+ <link name="trianglemesh10"> 
+  <visual> 
+   <geometry> 
+    <mesh filename="package://tbotros_description/desc//trianglemesh10.stl" scale="1 1 1"/> 
+   </geometry> 
+   <material name="Cyan"> 
+    <color rgba="0 1.0 1.0 1.0"/> 
+   </material> 
+  </visual> 
+ </link> 
+
+ <joint name="wall0_to_trianglemesh10" type="fixed"> 
+  <parent link="wall0"/> 
+  <child link="trianglemesh10"/> 
+  <origin xyz="0.0 0.0 0.0" rpy="0.0 -0.0 0.0"/> 
+ </joint> 
+
+ <link name="hoverpoint0"> 
+  <visual> 
+   <geometry> 
+    <sphere radius="0.01"/> 
+   </geometry> 
+   <material name="Cyan"> 
+    <color rgba="0 1.0 1.0 1.0"/> 
+   </material> 
+  </visual> 
+ </link> 
+
+ <joint name="hold0_to_hoverpoint0" type="fixed"> 
+  <parent link="hold0"/> 
+  <child link="hoverpoint0"/> 
+  <origin xyz="0.0 0.0 0.084" rpy="0.0 -0.0 0.0"/> 
+ </joint> 
+
+ <link name="grippoint0"> 
+  <visual> 
+   <geometry> 
+    <sphere radius="0.01"/> 
+   </geometry> 
+   <material name="Cyan"> 
+    <color rgba="0 1.0 1.0 1.0"/> 
+   </material> 
+  </visual> 
+ </link> 
+
+ <joint name="hold0_to_grippoint0" type="fixed"> 
+  <parent link="hold0"/> 
+  <child link="grippoint0"/> 
+  <origin xyz="0.0 0.0 0.029" rpy="0.0 -0.0 0.0"/> 
+ </joint> 
+
+ <link name="trianglemesh0"> 
+  <visual> 
+   <geometry> 
+    <mesh filename="package://tbotros_description/desc//trianglemesh0.stl" scale="1 1 1"/> 
+   </geometry> 
+   <material name="Cyan"> 
+    <color rgba="0 1.0 1.0 1.0"/> 
+   </material> 
+  </visual> 
+ </link> 
+
+ <joint name="hold0_to_trianglemesh0" type="fixed"> 
+  <parent link="hold0"/> 
+  <child link="trianglemesh0"/> 
+  <origin xyz="0.0 0.0 0.0" rpy="0.0 -0.0 0.0"/> 
+ </joint> 
+
+ <link name="point0"> 
+  <visual> 
+   <geometry> 
+    <sphere radius="0.01"/> 
+   </geometry> 
+   <material name="Cyan"> 
+    <color rgba="0 1.0 1.0 1.0"/> 
+   </material> 
+  </visual> 
+ </link> 
+
+ <joint name="trianglemesh0_to_point0" type="fixed"> 
+  <parent link="trianglemesh0"/> 
+  <child link="point0"/> 
+  <origin xyz="0.0 0.0 0.0" rpy="0.0 -0.0 0.0"/> 
+ </joint> 
+
+ <link name="hoverpoint1"> 
+  <visual> 
+   <geometry> 
+    <sphere radius="0.01"/> 
+   </geometry> 
+   <material name="Cyan"> 
+    <color rgba="0 1.0 1.0 1.0"/> 
+   </material> 
+  </visual> 
+ </link> 
+
+ <joint name="hold1_to_hoverpoint1" type="fixed"> 
+  <parent link="hold1"/> 
+  <child link="hoverpoint1"/> 
+  <origin xyz="0.0 0.0 0.084" rpy="0.0 -0.0 0.0"/> 
+ </joint> 
+
+ <link name="grippoint1"> 
+  <visual> 
+   <geometry> 
+    <sphere radius="0.01"/> 
+   </geometry> 
+   <material name="Cyan"> 
+    <color rgba="0 1.0 1.0 1.0"/> 
+   </material> 
+  </visual> 
+ </link> 
+
+ <joint name="hold1_to_grippoint1" type="fixed"> 
+  <parent link="hold1"/> 
+  <child link="grippoint1"/> 
+  <origin xyz="0.0 0.0 0.029" rpy="0.0 -0.0 0.0"/> 
+ </joint> 
+
+ <link name="trianglemesh1"> 
+  <visual> 
+   <geometry> 
+    <mesh filename="package://tbotros_description/desc//trianglemesh1.stl" scale="1 1 1"/> 
+   </geometry> 
+   <material name="Cyan"> 
+    <color rgba="0 1.0 1.0 1.0"/> 
+   </material> 
+  </visual> 
+ </link> 
+
+ <joint name="hold1_to_trianglemesh1" type="fixed"> 
+  <parent link="hold1"/> 
+  <child link="trianglemesh1"/> 
+  <origin xyz="0.0 0.0 0.0" rpy="0.0 -0.0 0.0"/> 
+ </joint> 
+
+ <link name="point1"> 
+  <visual> 
+   <geometry> 
+    <sphere radius="0.01"/> 
+   </geometry> 
+   <material name="Cyan"> 
+    <color rgba="0 1.0 1.0 1.0"/> 
+   </material> 
+  </visual> 
+ </link> 
+
+ <joint name="trianglemesh1_to_point1" type="fixed"> 
+  <parent link="trianglemesh1"/> 
+  <child link="point1"/> 
+  <origin xyz="0.0 0.0 0.0" rpy="0.0 -0.0 0.0"/> 
+ </joint> 
+
+ <link name="hoverpoint2"> 
+  <visual> 
+   <geometry> 
+    <sphere radius="0.01"/> 
+   </geometry> 
+   <material name="Cyan"> 
+    <color rgba="0 1.0 1.0 1.0"/> 
+   </material> 
+  </visual> 
+ </link> 
+
+ <joint name="hold2_to_hoverpoint2" type="fixed"> 
+  <parent link="hold2"/> 
+  <child link="hoverpoint2"/> 
+  <origin xyz="0.0 0.0 0.084" rpy="0.0 -0.0 0.0"/> 
+ </joint> 
+
+ <link name="grippoint2"> 
+  <visual> 
+   <geometry> 
+    <sphere radius="0.01"/> 
+   </geometry> 
+   <material name="Cyan"> 
+    <color rgba="0 1.0 1.0 1.0"/> 
+   </material> 
+  </visual> 
+ </link> 
+
+ <joint name="hold2_to_grippoint2" type="fixed"> 
+  <parent link="hold2"/> 
+  <child link="grippoint2"/> 
+  <origin xyz="0.0 0.0 0.029" rpy="0.0 -0.0 0.0"/> 
+ </joint> 
+
+ <link name="trianglemesh2"> 
+  <visual> 
+   <geometry> 
+    <mesh filename="package://tbotros_description/desc//trianglemesh2.stl" scale="1 1 1"/> 
+   </geometry> 
+   <material name="Cyan"> 
+    <color rgba="0 1.0 1.0 1.0"/> 
+   </material> 
+  </visual> 
+ </link> 
+
+ <joint name="hold2_to_trianglemesh2" type="fixed"> 
+  <parent link="hold2"/> 
+  <child link="trianglemesh2"/> 
+  <origin xyz="0.0 0.0 0.0" rpy="0.0 -0.0 0.0"/> 
+ </joint> 
+
+ <link name="point2"> 
+  <visual> 
+   <geometry> 
+    <sphere radius="0.01"/> 
+   </geometry> 
+   <material name="Cyan"> 
+    <color rgba="0 1.0 1.0 1.0"/> 
+   </material> 
+  </visual> 
+ </link> 
+
+ <joint name="trianglemesh2_to_point2" type="fixed"> 
+  <parent link="trianglemesh2"/> 
+  <child link="point2"/> 
+  <origin xyz="0.0 0.0 0.0" rpy="0.0 -0.0 0.0"/> 
+ </joint> 
+
+ <link name="hoverpoint3"> 
+  <visual> 
+   <geometry> 
+    <sphere radius="0.01"/> 
+   </geometry> 
+   <material name="Cyan"> 
+    <color rgba="0 1.0 1.0 1.0"/> 
+   </material> 
+  </visual> 
+ </link> 
+
+ <joint name="hold3_to_hoverpoint3" type="fixed"> 
+  <parent link="hold3"/> 
+  <child link="hoverpoint3"/> 
+  <origin xyz="0.0 0.0 0.084" rpy="0.0 -0.0 0.0"/> 
+ </joint> 
+
+ <link name="grippoint3"> 
+  <visual> 
+   <geometry> 
+    <sphere radius="0.01"/> 
+   </geometry> 
+   <material name="Cyan"> 
+    <color rgba="0 1.0 1.0 1.0"/> 
+   </material> 
+  </visual> 
+ </link> 
+
+ <joint name="hold3_to_grippoint3" type="fixed"> 
+  <parent link="hold3"/> 
+  <child link="grippoint3"/> 
+  <origin xyz="0.0 0.0 0.029" rpy="0.0 -0.0 0.0"/> 
+ </joint> 
+
+ <link name="trianglemesh3"> 
+  <visual> 
+   <geometry> 
+    <mesh filename="package://tbotros_description/desc//trianglemesh3.stl" scale="1 1 1"/> 
+   </geometry> 
+   <material name="Cyan"> 
+    <color rgba="0 1.0 1.0 1.0"/> 
+   </material> 
+  </visual> 
+ </link> 
+
+ <joint name="hold3_to_trianglemesh3" type="fixed"> 
+  <parent link="hold3"/> 
+  <child link="trianglemesh3"/> 
+  <origin xyz="0.0 0.0 0.0" rpy="0.0 -0.0 0.0"/> 
+ </joint> 
+
+ <link name="point3"> 
+  <visual> 
+   <geometry> 
+    <sphere radius="0.01"/> 
+   </geometry> 
+   <material name="Cyan"> 
+    <color rgba="0 1.0 1.0 1.0"/> 
+   </material> 
+  </visual> 
+ </link> 
+
+ <joint name="trianglemesh3_to_point3" type="fixed"> 
+  <parent link="trianglemesh3"/> 
+  <child link="point3"/> 
+  <origin xyz="0.0 0.0 0.0" rpy="0.0 -0.0 0.0"/> 
+ </joint> 
+
+ <link name="hoverpoint4"> 
+  <visual> 
+   <geometry> 
+    <sphere radius="0.01"/> 
+   </geometry> 
+   <material name="Cyan"> 
+    <color rgba="0 1.0 1.0 1.0"/> 
+   </material> 
+  </visual> 
+ </link> 
+
+ <joint name="hold4_to_hoverpoint4" type="fixed"> 
+  <parent link="hold4"/> 
+  <child link="hoverpoint4"/> 
+  <origin xyz="0.0 0.0 0.084" rpy="0.0 -0.0 0.0"/> 
+ </joint> 
+
+ <link name="grippoint4"> 
+  <visual> 
+   <geometry> 
+    <sphere radius="0.01"/> 
+   </geometry> 
+   <material name="Cyan"> 
+    <color rgba="0 1.0 1.0 1.0"/> 
+   </material> 
+  </visual> 
+ </link> 
+
+ <joint name="hold4_to_grippoint4" type="fixed"> 
+  <parent link="hold4"/> 
+  <child link="grippoint4"/> 
+  <origin xyz="0.0 0.0 0.029" rpy="0.0 -0.0 0.0"/> 
+ </joint> 
+
+ <link name="trianglemesh4"> 
+  <visual> 
+   <geometry> 
+    <mesh filename="package://tbotros_description/desc//trianglemesh4.stl" scale="1 1 1"/> 
+   </geometry> 
+   <material name="Cyan"> 
+    <color rgba="0 1.0 1.0 1.0"/> 
+   </material> 
+  </visual> 
+ </link> 
+
+ <joint name="hold4_to_trianglemesh4" type="fixed"> 
+  <parent link="hold4"/> 
+  <child link="trianglemesh4"/> 
+  <origin xyz="0.0 0.0 0.0" rpy="0.0 -0.0 0.0"/> 
+ </joint> 
+
+ <link name="point4"> 
+  <visual> 
+   <geometry> 
+    <sphere radius="0.01"/> 
+   </geometry> 
+   <material name="Cyan"> 
+    <color rgba="0 1.0 1.0 1.0"/> 
+   </material> 
+  </visual> 
+ </link> 
+
+ <joint name="trianglemesh4_to_point4" type="fixed"> 
+  <parent link="trianglemesh4"/> 
+  <child link="point4"/> 
+  <origin xyz="0.0 0.0 0.0" rpy="0.0 -0.0 0.0"/> 
+ </joint> 
+
+ <link name="hoverpoint5"> 
+  <visual> 
+   <geometry> 
+    <sphere radius="0.01"/> 
+   </geometry> 
+   <material name="Cyan"> 
+    <color rgba="0 1.0 1.0 1.0"/> 
+   </material> 
+  </visual> 
+ </link> 
+
+ <joint name="hold5_to_hoverpoint5" type="fixed"> 
+  <parent link="hold5"/> 
+  <child link="hoverpoint5"/> 
+  <origin xyz="0.0 0.0 0.084" rpy="0.0 -0.0 0.0"/> 
+ </joint> 
+
+ <link name="grippoint5"> 
+  <visual> 
+   <geometry> 
+    <sphere radius="0.01"/> 
+   </geometry> 
+   <material name="Cyan"> 
+    <color rgba="0 1.0 1.0 1.0"/> 
+   </material> 
+  </visual> 
+ </link> 
+
+ <joint name="hold5_to_grippoint5" type="fixed"> 
+  <parent link="hold5"/> 
+  <child link="grippoint5"/> 
+  <origin xyz="0.0 0.0 0.029" rpy="0.0 -0.0 0.0"/> 
+ </joint> 
+
+ <link name="trianglemesh5"> 
+  <visual> 
+   <geometry> 
+    <mesh filename="package://tbotros_description/desc//trianglemesh5.stl" scale="1 1 1"/> 
+   </geometry> 
+   <material name="Cyan"> 
+    <color rgba="0 1.0 1.0 1.0"/> 
+   </material> 
+  </visual> 
+ </link> 
+
+ <joint name="hold5_to_trianglemesh5" type="fixed"> 
+  <parent link="hold5"/> 
+  <child link="trianglemesh5"/> 
+  <origin xyz="0.0 0.0 0.0" rpy="0.0 -0.0 0.0"/> 
+ </joint> 
+
+ <link name="point5"> 
+  <visual> 
+   <geometry> 
+    <sphere radius="0.01"/> 
+   </geometry> 
+   <material name="Cyan"> 
+    <color rgba="0 1.0 1.0 1.0"/> 
+   </material> 
+  </visual> 
+ </link> 
+
+ <joint name="trianglemesh5_to_point5" type="fixed"> 
+  <parent link="trianglemesh5"/> 
+  <child link="point5"/> 
+  <origin xyz="0.0 0.0 0.0" rpy="0.0 -0.0 0.0"/> 
+ </joint> 
+
+ <link name="hoverpoint6"> 
+  <visual> 
+   <geometry> 
+    <sphere radius="0.01"/> 
+   </geometry> 
+   <material name="Cyan"> 
+    <color rgba="0 1.0 1.0 1.0"/> 
+   </material> 
+  </visual> 
+ </link> 
+
+ <joint name="hold6_to_hoverpoint6" type="fixed"> 
+  <parent link="hold6"/> 
+  <child link="hoverpoint6"/> 
+  <origin xyz="0.0 0.0 0.084" rpy="0.0 -0.0 0.0"/> 
+ </joint> 
+
+ <link name="grippoint6"> 
+  <visual> 
+   <geometry> 
+    <sphere radius="0.01"/> 
+   </geometry> 
+   <material name="Cyan"> 
+    <color rgba="0 1.0 1.0 1.0"/> 
+   </material> 
+  </visual> 
+ </link> 
+
+ <joint name="hold6_to_grippoint6" type="fixed"> 
+  <parent link="hold6"/> 
+  <child link="grippoint6"/> 
+  <origin xyz="0.0 0.0 0.029" rpy="0.0 -0.0 0.0"/> 
+ </joint> 
+
+ <link name="trianglemesh6"> 
+  <visual> 
+   <geometry> 
+    <mesh filename="package://tbotros_description/desc//trianglemesh6.stl" scale="1 1 1"/> 
+   </geometry> 
+   <material name="Cyan"> 
+    <color rgba="0 1.0 1.0 1.0"/> 
+   </material> 
+  </visual> 
+ </link> 
+
+ <joint name="hold6_to_trianglemesh6" type="fixed"> 
+  <parent link="hold6"/> 
+  <child link="trianglemesh6"/> 
+  <origin xyz="0.0 0.0 0.0" rpy="0.0 -0.0 0.0"/> 
+ </joint> 
+
+ <link name="point6"> 
+  <visual> 
+   <geometry> 
+    <sphere radius="0.01"/> 
+   </geometry> 
+   <material name="Cyan"> 
+    <color rgba="0 1.0 1.0 1.0"/> 
+   </material> 
+  </visual> 
+ </link> 
+
+ <joint name="trianglemesh6_to_point6" type="fixed"> 
+  <parent link="trianglemesh6"/> 
+  <child link="point6"/> 
+  <origin xyz="0.0 0.0 0.0" rpy="0.0 -0.0 0.0"/> 
+ </joint> 
+
+ <link name="hoverpoint7"> 
+  <visual> 
+   <geometry> 
+    <sphere radius="0.01"/> 
+   </geometry> 
+   <material name="Cyan"> 
+    <color rgba="0 1.0 1.0 1.0"/> 
+   </material> 
+  </visual> 
+ </link> 
+
+ <joint name="hold7_to_hoverpoint7" type="fixed"> 
+  <parent link="hold7"/> 
+  <child link="hoverpoint7"/> 
+  <origin xyz="0.0 0.0 0.084" rpy="0.0 -0.0 0.0"/> 
+ </joint> 
+
+ <link name="grippoint7"> 
+  <visual> 
+   <geometry> 
+    <sphere radius="0.01"/> 
+   </geometry> 
+   <material name="Cyan"> 
+    <color rgba="0 1.0 1.0 1.0"/> 
+   </material> 
+  </visual> 
+ </link> 
+
+ <joint name="hold7_to_grippoint7" type="fixed"> 
+  <parent link="hold7"/> 
+  <child link="grippoint7"/> 
+  <origin xyz="0.0 0.0 0.029" rpy="0.0 -0.0 0.0"/> 
+ </joint> 
+
+ <link name="trianglemesh7"> 
+  <visual> 
+   <geometry> 
+    <mesh filename="package://tbotros_description/desc//trianglemesh7.stl" scale="1 1 1"/> 
+   </geometry> 
+   <material name="Cyan"> 
+    <color rgba="0 1.0 1.0 1.0"/> 
+   </material> 
+  </visual> 
+ </link> 
+
+ <joint name="hold7_to_trianglemesh7" type="fixed"> 
+  <parent link="hold7"/> 
+  <child link="trianglemesh7"/> 
+  <origin xyz="0.0 0.0 0.0" rpy="0.0 -0.0 0.0"/> 
+ </joint> 
+
+ <link name="point7"> 
+  <visual> 
+   <geometry> 
+    <sphere radius="0.01"/> 
+   </geometry> 
+   <material name="Cyan"> 
+    <color rgba="0 1.0 1.0 1.0"/> 
+   </material> 
+  </visual> 
+ </link> 
+
+ <joint name="trianglemesh7_to_point7" type="fixed"> 
+  <parent link="trianglemesh7"/> 
+  <child link="point7"/> 
+  <origin xyz="0.0 0.0 0.0" rpy="0.0 -0.0 0.0"/> 
+ </joint> 
+
+ <link name="hoverpoint8"> 
+  <visual> 
+   <geometry> 
+    <sphere radius="0.01"/> 
+   </geometry> 
+   <material name="Cyan"> 
+    <color rgba="0 1.0 1.0 1.0"/> 
+   </material> 
+  </visual> 
+ </link> 
+
+ <joint name="hold8_to_hoverpoint8" type="fixed"> 
+  <parent link="hold8"/> 
+  <child link="hoverpoint8"/> 
+  <origin xyz="0.0 0.0 0.084" rpy="0.0 -0.0 0.0"/> 
+ </joint> 
+
+ <link name="grippoint8"> 
+  <visual> 
+   <geometry> 
+    <sphere radius="0.01"/> 
+   </geometry> 
+   <material name="Cyan"> 
+    <color rgba="0 1.0 1.0 1.0"/> 
+   </material> 
+  </visual> 
+ </link> 
+
+ <joint name="hold8_to_grippoint8" type="fixed"> 
+  <parent link="hold8"/> 
+  <child link="grippoint8"/> 
+  <origin xyz="0.0 0.0 0.029" rpy="0.0 -0.0 0.0"/> 
+ </joint> 
+
+ <link name="trianglemesh8"> 
+  <visual> 
+   <geometry> 
+    <mesh filename="package://tbotros_description/desc//trianglemesh8.stl" scale="1 1 1"/> 
+   </geometry> 
+   <material name="Cyan"> 
+    <color rgba="0 1.0 1.0 1.0"/> 
+   </material> 
+  </visual> 
+ </link> 
+
+ <joint name="hold8_to_trianglemesh8" type="fixed"> 
+  <parent link="hold8"/> 
+  <child link="trianglemesh8"/> 
+  <origin xyz="0.0 0.0 0.0" rpy="0.0 -0.0 0.0"/> 
+ </joint> 
+
+ <link name="point8"> 
+  <visual> 
+   <geometry> 
+    <sphere radius="0.01"/> 
+   </geometry> 
+   <material name="Cyan"> 
+    <color rgba="0 1.0 1.0 1.0"/> 
+   </material> 
+  </visual> 
+ </link> 
+
+ <joint name="trianglemesh8_to_point8" type="fixed"> 
+  <parent link="trianglemesh8"/> 
+  <child link="point8"/> 
+  <origin xyz="0.0 0.0 0.0" rpy="0.0 -0.0 0.0"/> 
+ </joint> 
+
+ <link name="hoverpoint9"> 
+  <visual> 
+   <geometry> 
+    <sphere radius="0.01"/> 
+   </geometry> 
+   <material name="Cyan"> 
+    <color rgba="0 1.0 1.0 1.0"/> 
+   </material> 
+  </visual> 
+ </link> 
+
+ <joint name="hold9_to_hoverpoint9" type="fixed"> 
+  <parent link="hold9"/> 
+  <child link="hoverpoint9"/> 
+  <origin xyz="0.0 0.0 0.084" rpy="0.0 -0.0 0.0"/> 
+ </joint> 
+
+ <link name="grippoint9"> 
+  <visual> 
+   <geometry> 
+    <sphere radius="0.01"/> 
+   </geometry> 
+   <material name="Cyan"> 
+    <color rgba="0 1.0 1.0 1.0"/> 
+   </material> 
+  </visual> 
+ </link> 
+
+ <joint name="hold9_to_grippoint9" type="fixed"> 
+  <parent link="hold9"/> 
+  <child link="grippoint9"/> 
+  <origin xyz="0.0 0.0 0.029" rpy="0.0 -0.0 0.0"/> 
+ </joint> 
+
+ <link name="trianglemesh9"> 
+  <visual> 
+   <geometry> 
+    <mesh filename="package://tbotros_description/desc//trianglemesh9.stl" scale="1 1 1"/> 
+   </geometry> 
+   <material name="Cyan"> 
+    <color rgba="0 1.0 1.0 1.0"/> 
+   </material> 
+  </visual> 
+ </link> 
+
+ <joint name="hold9_to_trianglemesh9" type="fixed"> 
+  <parent link="hold9"/> 
+  <child link="trianglemesh9"/> 
+  <origin xyz="0.0 0.0 0.0" rpy="0.0 -0.0 0.0"/> 
+ </joint> 
+
+ <link name="point9"> 
+  <visual> 
+   <geometry> 
+    <sphere radius="0.01"/> 
+   </geometry> 
+   <material name="Cyan"> 
+    <color rgba="0 1.0 1.0 1.0"/> 
+   </material> 
+  </visual> 
+ </link> 
+
+ <joint name="trianglemesh9_to_point9" type="fixed"> 
+  <parent link="trianglemesh9"/> 
+  <child link="point9"/> 
+  <origin xyz="0.0 0.0 0.0" rpy="0.0 -0.0 0.0"/> 
+ </joint> 
+
+ <link name="point10"> 
+  <visual> 
+   <geometry> 
+    <sphere radius="0.01"/> 
+   </geometry> 
+   <material name="Cyan"> 
+    <color rgba="0 1.0 1.0 1.0"/> 
+   </material> 
+  </visual> 
+ </link> 
+
+ <joint name="trianglemesh10_to_point10" type="fixed"> 
+  <parent link="trianglemesh10"/> 
+  <child link="point10"/> 
+  <origin xyz="0.0 0.0 0.0" rpy="0.0 -0.0 0.0"/> 
+ </joint> 
+
+ <link name="hoverpoint10"> 
+  <visual> 
+   <geometry> 
+    <sphere radius="0.01"/> 
+   </geometry> 
+   <material name="Cyan"> 
+    <color rgba="0 1.0 1.0 1.0"/> 
+   </material> 
+  </visual> 
+ </link> 
+
+ <joint name="gripper0_to_hoverpoint10" type="fixed"> 
+  <parent link="gripper0"/> 
+  <child link="hoverpoint10"/> 
+  <origin xyz="0.0 0.0 0.195" rpy="0.0 -0.0 0.0"/> 
+ </joint> 
+
+ <link name="grippoint10"> 
+  <visual> 
+   <geometry> 
+    <sphere radius="0.01"/> 
+   </geometry> 
+   <material name="Cyan"> 
+    <color rgba="0 1.0 1.0 1.0"/> 
+   </material> 
+  </visual> 
+ </link> 
+
+ <joint name="gripper0_to_grippoint10" type="fixed"> 
+  <parent link="gripper0"/> 
+  <child link="grippoint10"/> 
+  <origin xyz="0.0 0.0 0.029" rpy="0.0 -0.0 0.0"/> 
+ </joint> 
+
+ <link name="anchorpoint10"> 
+  <visual> 
+   <geometry> 
+    <sphere radius="0.01"/> 
+   </geometry> 
+   <material name="Cyan"> 
+    <color rgba="0 1.0 1.0 1.0"/> 
+   </material> 
+  </visual> 
+ </link> 
+
+ <joint name="gripper0_to_anchorpoint10" type="fixed"> 
+  <parent link="gripper0"/> 
+  <child link="anchorpoint10"/> 
+  <origin xyz="0.0 0.0 0.0815" rpy="0.0 -0.0 0.0"/> 
+ </joint> 
+
+ <link name="dockpoint0"> 
+  <visual> 
+   <geometry> 
+    <sphere radius="0.01"/> 
+   </geometry> 
+   <material name="Cyan"> 
+    <color rgba="0 1.0 1.0 1.0"/> 
+   </material> 
+  </visual> 
+ </link> 
+
+ <joint name="gripper0_to_dockpoint0" type="fixed"> 
+  <parent link="gripper0"/> 
+  <child link="dockpoint0"/> 
+  <origin xyz="0.0 0.0 0.143" rpy="3.141592653589793 -0.0 0.0"/> 
+ </joint> 
+
+ <link name="marker0"> 
+  <visual> 
+   <geometry> 
+    <sphere radius="0.01"/> 
+   </geometry> 
+   <material name="Cyan"> 
+    <color rgba="0 1.0 1.0 1.0"/> 
+   </material> 
+  </visual> 
+ </link> 
+
+ <joint name="gripper0_to_marker0" type="fixed"> 
+  <parent link="gripper0"/> 
+  <child link="marker0"/> 
+  <origin xyz="0.0 -0.011 0.089" rpy="1.5707963267948966 -0.0 0.0"/> 
+ </joint> 
+
+ <link name="trianglemesh16"> 
+  <visual> 
+   <geometry> 
+    <mesh filename="package://tbotros_description/desc//trianglemesh16.stl" scale="1 1 1"/> 
+   </geometry> 
+   <material name="Cyan"> 
+    <color rgba="0 1.0 1.0 1.0"/> 
+   </material> 
+  </visual> 
+ </link> 
+
+ <joint name="gripper0_to_trianglemesh16" type="fixed"> 
+  <parent link="gripper0"/> 
+  <child link="trianglemesh16"/> 
+  <origin xyz="0.0 0.0 0.0" rpy="0.0 -0.0 0.0"/> 
+ </joint> 
+
+ <link name="point16"> 
+  <visual> 
+   <geometry> 
+    <sphere radius="0.01"/> 
+   </geometry> 
+   <material name="Cyan"> 
+    <color rgba="0 1.0 1.0 1.0"/> 
+   </material> 
+  </visual> 
+ </link> 
+
+ <joint name="trianglemesh16_to_point16" type="fixed"> 
+  <parent link="trianglemesh16"/> 
+  <child link="point16"/> 
+  <origin xyz="0.0 0.0 0.0" rpy="0.0 -0.0 0.0"/> 
+ </joint> 
+
+ <link name="hoverpoint11"> 
+  <visual> 
+   <geometry> 
+    <sphere radius="0.01"/> 
+   </geometry> 
+   <material name="Cyan"> 
+    <color rgba="0 1.0 1.0 1.0"/> 
+   </material> 
+  </visual> 
+ </link> 
+
+ <joint name="gripper1_to_hoverpoint11" type="fixed"> 
+  <parent link="gripper1"/> 
+  <child link="hoverpoint11"/> 
+  <origin xyz="0.0 0.0 0.195" rpy="0.0 -0.0 0.0"/> 
+ </joint> 
+
+ <link name="grippoint11"> 
+  <visual> 
+   <geometry> 
+    <sphere radius="0.01"/> 
+   </geometry> 
+   <material name="Cyan"> 
+    <color rgba="0 1.0 1.0 1.0"/> 
+   </material> 
+  </visual> 
+ </link> 
+
+ <joint name="gripper1_to_grippoint11" type="fixed"> 
+  <parent link="gripper1"/> 
+  <child link="grippoint11"/> 
+  <origin xyz="0.0 0.0 0.029" rpy="0.0 -0.0 0.0"/> 
+ </joint> 
+
+ <link name="anchorpoint11"> 
+  <visual> 
+   <geometry> 
+    <sphere radius="0.01"/> 
+   </geometry> 
+   <material name="Cyan"> 
+    <color rgba="0 1.0 1.0 1.0"/> 
+   </material> 
+  </visual> 
+ </link> 
+
+ <joint name="gripper1_to_anchorpoint11" type="fixed"> 
+  <parent link="gripper1"/> 
+  <child link="anchorpoint11"/> 
+  <origin xyz="0.0 0.0 0.0815" rpy="0.0 -0.0 0.0"/> 
+ </joint> 
+
+ <link name="dockpoint1"> 
+  <visual> 
+   <geometry> 
+    <sphere radius="0.01"/> 
+   </geometry> 
+   <material name="Cyan"> 
+    <color rgba="0 1.0 1.0 1.0"/> 
+   </material> 
+  </visual> 
+ </link> 
+
+ <joint name="gripper1_to_dockpoint1" type="fixed"> 
+  <parent link="gripper1"/> 
+  <child link="dockpoint1"/> 
+  <origin xyz="0.0 0.0 0.143" rpy="3.141592653589793 -0.0 0.0"/> 
+ </joint> 
+
+ <link name="marker1"> 
+  <visual> 
+   <geometry> 
+    <sphere radius="0.01"/> 
+   </geometry> 
+   <material name="Cyan"> 
+    <color rgba="0 1.0 1.0 1.0"/> 
+   </material> 
+  </visual> 
+ </link> 
+
+ <joint name="gripper1_to_marker1" type="fixed"> 
+  <parent link="gripper1"/> 
+  <child link="marker1"/> 
+  <origin xyz="0.0 -0.011 0.089" rpy="1.5707963267948966 -0.0 0.0"/> 
+ </joint> 
+
+ <link name="trianglemesh17"> 
+  <visual> 
+   <geometry> 
+    <mesh filename="package://tbotros_description/desc//trianglemesh17.stl" scale="1 1 1"/> 
+   </geometry> 
+   <material name="Cyan"> 
+    <color rgba="0 1.0 1.0 1.0"/> 
+   </material> 
+  </visual> 
+ </link> 
+
+ <joint name="gripper1_to_trianglemesh17" type="fixed"> 
+  <parent link="gripper1"/> 
+  <child link="trianglemesh17"/> 
+  <origin xyz="0.0 0.0 0.0" rpy="0.0 -0.0 0.0"/> 
+ </joint> 
+
+ <link name="point17"> 
+  <visual> 
+   <geometry> 
+    <sphere radius="0.01"/> 
+   </geometry> 
+   <material name="Cyan"> 
+    <color rgba="0 1.0 1.0 1.0"/> 
+   </material> 
+  </visual> 
+ </link> 
+
+ <joint name="trianglemesh17_to_point17" type="fixed"> 
+  <parent link="trianglemesh17"/> 
+  <child link="point17"/> 
+  <origin xyz="0.0 0.0 0.0" rpy="0.0 -0.0 0.0"/> 
+ </joint> 
+
+ <link name="hoverpoint12"> 
+  <visual> 
+   <geometry> 
+    <sphere radius="0.01"/> 
+   </geometry> 
+   <material name="Cyan"> 
+    <color rgba="0 1.0 1.0 1.0"/> 
+   </material> 
+  </visual> 
+ </link> 
+
+ <joint name="gripper2_to_hoverpoint12" type="fixed"> 
+  <parent link="gripper2"/> 
+  <child link="hoverpoint12"/> 
+  <origin xyz="0.0 0.0 0.195" rpy="0.0 -0.0 0.0"/> 
+ </joint> 
+
+ <link name="grippoint12"> 
+  <visual> 
+   <geometry> 
+    <sphere radius="0.01"/> 
+   </geometry> 
+   <material name="Cyan"> 
+    <color rgba="0 1.0 1.0 1.0"/> 
+   </material> 
+  </visual> 
+ </link> 
+
+ <joint name="gripper2_to_grippoint12" type="fixed"> 
+  <parent link="gripper2"/> 
+  <child link="grippoint12"/> 
+  <origin xyz="0.0 0.0 0.029" rpy="0.0 -0.0 0.0"/> 
+ </joint> 
+
+ <link name="anchorpoint12"> 
+  <visual> 
+   <geometry> 
+    <sphere radius="0.01"/> 
+   </geometry> 
+   <material name="Cyan"> 
+    <color rgba="0 1.0 1.0 1.0"/> 
+   </material> 
+  </visual> 
+ </link> 
+
+ <joint name="gripper2_to_anchorpoint12" type="fixed"> 
+  <parent link="gripper2"/> 
+  <child link="anchorpoint12"/> 
+  <origin xyz="0.0 0.0 0.0815" rpy="0.0 -0.0 0.0"/> 
+ </joint> 
+
+ <link name="dockpoint2"> 
+  <visual> 
+   <geometry> 
+    <sphere radius="0.01"/> 
+   </geometry> 
+   <material name="Cyan"> 
+    <color rgba="0 1.0 1.0 1.0"/> 
+   </material> 
+  </visual> 
+ </link> 
+
+ <joint name="gripper2_to_dockpoint2" type="fixed"> 
+  <parent link="gripper2"/> 
+  <child link="dockpoint2"/> 
+  <origin xyz="0.0 0.0 0.143" rpy="3.141592653589793 -0.0 0.0"/> 
+ </joint> 
+
+ <link name="marker2"> 
+  <visual> 
+   <geometry> 
+    <sphere radius="0.01"/> 
+   </geometry> 
+   <material name="Cyan"> 
+    <color rgba="0 1.0 1.0 1.0"/> 
+   </material> 
+  </visual> 
+ </link> 
+
+ <joint name="gripper2_to_marker2" type="fixed"> 
+  <parent link="gripper2"/> 
+  <child link="marker2"/> 
+  <origin xyz="0.0 -0.011 0.089" rpy="1.5707963267948966 -0.0 0.0"/> 
+ </joint> 
+
+ <link name="trianglemesh18"> 
+  <visual> 
+   <geometry> 
+    <mesh filename="package://tbotros_description/desc//trianglemesh18.stl" scale="1 1 1"/> 
+   </geometry> 
+   <material name="Cyan"> 
+    <color rgba="0 1.0 1.0 1.0"/> 
+   </material> 
+  </visual> 
+ </link> 
+
+ <joint name="gripper2_to_trianglemesh18" type="fixed"> 
+  <parent link="gripper2"/> 
+  <child link="trianglemesh18"/> 
+  <origin xyz="0.0 0.0 0.0" rpy="0.0 -0.0 0.0"/> 
+ </joint> 
+
+ <link name="point18"> 
+  <visual> 
+   <geometry> 
+    <sphere radius="0.01"/> 
+   </geometry> 
+   <material name="Cyan"> 
+    <color rgba="0 1.0 1.0 1.0"/> 
+   </material> 
+  </visual> 
+ </link> 
+
+ <joint name="trianglemesh18_to_point18" type="fixed"> 
+  <parent link="trianglemesh18"/> 
+  <child link="point18"/> 
+  <origin xyz="0.0 0.0 0.0" rpy="0.0 -0.0 0.0"/> 
+ </joint> 
+
+ <link name="hoverpoint13"> 
+  <visual> 
+   <geometry> 
+    <sphere radius="0.01"/> 
+   </geometry> 
+   <material name="Cyan"> 
+    <color rgba="0 1.0 1.0 1.0"/> 
+   </material> 
+  </visual> 
+ </link> 
+
+ <joint name="gripper3_to_hoverpoint13" type="fixed"> 
+  <parent link="gripper3"/> 
+  <child link="hoverpoint13"/> 
+  <origin xyz="0.0 0.0 0.195" rpy="0.0 -0.0 0.0"/> 
+ </joint> 
+
+ <link name="grippoint13"> 
+  <visual> 
+   <geometry> 
+    <sphere radius="0.01"/> 
+   </geometry> 
+   <material name="Cyan"> 
+    <color rgba="0 1.0 1.0 1.0"/> 
+   </material> 
+  </visual> 
+ </link> 
+
+ <joint name="gripper3_to_grippoint13" type="fixed"> 
+  <parent link="gripper3"/> 
+  <child link="grippoint13"/> 
+  <origin xyz="0.0 0.0 0.029" rpy="0.0 -0.0 0.0"/> 
+ </joint> 
+
+ <link name="anchorpoint13"> 
+  <visual> 
+   <geometry> 
+    <sphere radius="0.01"/> 
+   </geometry> 
+   <material name="Cyan"> 
+    <color rgba="0 1.0 1.0 1.0"/> 
+   </material> 
+  </visual> 
+ </link> 
+
+ <joint name="gripper3_to_anchorpoint13" type="fixed"> 
+  <parent link="gripper3"/> 
+  <child link="anchorpoint13"/> 
+  <origin xyz="0.0 0.0 0.0815" rpy="0.0 -0.0 0.0"/> 
+ </joint> 
+
+ <link name="dockpoint3"> 
+  <visual> 
+   <geometry> 
+    <sphere radius="0.01"/> 
+   </geometry> 
+   <material name="Cyan"> 
+    <color rgba="0 1.0 1.0 1.0"/> 
+   </material> 
+  </visual> 
+ </link> 
+
+ <joint name="gripper3_to_dockpoint3" type="fixed"> 
+  <parent link="gripper3"/> 
+  <child link="dockpoint3"/> 
+  <origin xyz="0.0 0.0 0.143" rpy="3.141592653589793 -0.0 0.0"/> 
+ </joint> 
+
+ <link name="marker3"> 
+  <visual> 
+   <geometry> 
+    <sphere radius="0.01"/> 
+   </geometry> 
+   <material name="Cyan"> 
+    <color rgba="0 1.0 1.0 1.0"/> 
+   </material> 
+  </visual> 
+ </link> 
+
+ <joint name="gripper3_to_marker3" type="fixed"> 
+  <parent link="gripper3"/> 
+  <child link="marker3"/> 
+  <origin xyz="0.0 -0.011 0.089" rpy="1.5707963267948966 -0.0 0.0"/> 
+ </joint> 
+
+ <link name="trianglemesh19"> 
+  <visual> 
+   <geometry> 
+    <mesh filename="package://tbotros_description/desc//trianglemesh19.stl" scale="1 1 1"/> 
+   </geometry> 
+   <material name="Cyan"> 
+    <color rgba="0 1.0 1.0 1.0"/> 
+   </material> 
+  </visual> 
+ </link> 
+
+ <joint name="gripper3_to_trianglemesh19" type="fixed"> 
+  <parent link="gripper3"/> 
+  <child link="trianglemesh19"/> 
+  <origin xyz="0.0 0.0 0.0" rpy="0.0 -0.0 0.0"/> 
+ </joint> 
+
+ <link name="point19"> 
+  <visual> 
+   <geometry> 
+    <sphere radius="0.01"/> 
+   </geometry> 
+   <material name="Cyan"> 
+    <color rgba="0 1.0 1.0 1.0"/> 
+   </material> 
+  </visual> 
+ </link> 
+
+ <joint name="trianglemesh19_to_point19" type="fixed"> 
+  <parent link="trianglemesh19"/> 
+  <child link="point19"/> 
+  <origin xyz="0.0 0.0 0.0" rpy="0.0 -0.0 0.0"/> 
+ </joint> 
+
+ <link name="hoverpoint14"> 
+  <visual> 
+   <geometry> 
+    <sphere radius="0.01"/> 
+   </geometry> 
+   <material name="Cyan"> 
+    <color rgba="0 1.0 1.0 1.0"/> 
+   </material> 
+  </visual> 
+ </link> 
+
+ <joint name="gripper4_to_hoverpoint14" type="fixed"> 
+  <parent link="gripper4"/> 
+  <child link="hoverpoint14"/> 
+  <origin xyz="0.0 0.0 0.195" rpy="0.0 -0.0 0.0"/> 
+ </joint> 
+
+ <link name="grippoint14"> 
+  <visual> 
+   <geometry> 
+    <sphere radius="0.01"/> 
+   </geometry> 
+   <material name="Cyan"> 
+    <color rgba="0 1.0 1.0 1.0"/> 
+   </material> 
+  </visual> 
+ </link> 
+
+ <joint name="gripper4_to_grippoint14" type="fixed"> 
+  <parent link="gripper4"/> 
+  <child link="grippoint14"/> 
+  <origin xyz="0.0 0.0 0.029" rpy="0.0 -0.0 0.0"/> 
+ </joint> 
+
+ <link name="anchorpoint14"> 
+  <visual> 
+   <geometry> 
+    <sphere radius="0.01"/> 
+   </geometry> 
+   <material name="Cyan"> 
+    <color rgba="0 1.0 1.0 1.0"/> 
+   </material> 
+  </visual> 
+ </link> 
+
+ <joint name="gripper4_to_anchorpoint14" type="fixed"> 
+  <parent link="gripper4"/> 
+  <child link="anchorpoint14"/> 
+  <origin xyz="0.0 0.0 0.0815" rpy="0.0 -0.0 0.0"/> 
+ </joint> 
+
+ <link name="dockpoint4"> 
+  <visual> 
+   <geometry> 
+    <sphere radius="0.01"/> 
+   </geometry> 
+   <material name="Cyan"> 
+    <color rgba="0 1.0 1.0 1.0"/> 
+   </material> 
+  </visual> 
+ </link> 
+
+ <joint name="gripper4_to_dockpoint4" type="fixed"> 
+  <parent link="gripper4"/> 
+  <child link="dockpoint4"/> 
+  <origin xyz="0.0 0.0 0.143" rpy="3.141592653589793 -0.0 0.0"/> 
+ </joint> 
+
+ <link name="marker4"> 
+  <visual> 
+   <geometry> 
+    <sphere radius="0.01"/> 
+   </geometry> 
+   <material name="Cyan"> 
+    <color rgba="0 1.0 1.0 1.0"/> 
+   </material> 
+  </visual> 
+ </link> 
+
+ <joint name="gripper4_to_marker4" type="fixed"> 
+  <parent link="gripper4"/> 
+  <child link="marker4"/> 
+  <origin xyz="0.0 -0.011 0.089" rpy="1.5707963267948966 -0.0 0.0"/> 
+ </joint> 
+
+ <link name="trianglemesh20"> 
+  <visual> 
+   <geometry> 
+    <mesh filename="package://tbotros_description/desc//trianglemesh20.stl" scale="1 1 1"/> 
+   </geometry> 
+   <material name="Cyan"> 
+    <color rgba="0 1.0 1.0 1.0"/> 
+   </material> 
+  </visual> 
+ </link> 
+
+ <joint name="gripper4_to_trianglemesh20" type="fixed"> 
+  <parent link="gripper4"/> 
+  <child link="trianglemesh20"/> 
+  <origin xyz="0.0 0.0 0.0" rpy="0.0 -0.0 0.0"/> 
+ </joint> 
+
+ <link name="point20"> 
+  <visual> 
+   <geometry> 
+    <sphere radius="0.01"/> 
+   </geometry> 
+   <material name="Cyan"> 
+    <color rgba="0 1.0 1.0 1.0"/> 
+   </material> 
+  </visual> 
+ </link> 
+
+ <joint name="trianglemesh20_to_point20" type="fixed"> 
+  <parent link="trianglemesh20"/> 
+  <child link="point20"/> 
+  <origin xyz="0.0 0.0 0.0" rpy="0.0 -0.0 0.0"/> 
+ </joint> 
+
+</robot> 
