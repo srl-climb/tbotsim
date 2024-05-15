@@ -34,10 +34,10 @@ tbot.platform.T_local= tb.TransformMatrix([1.4,0.45,2.18,0,0,110])
 tbot.place_all([7,6,8,0,2])
 
 #  just show me the robot!
-""" vi = tb.TetherbotVisualizer(tbot)
+vi = tb.TetherbotVisualizer(tbot)
 vi.run()
 exit()
- """
+
 
 
 # ==== PREPARATIONS ====
