@@ -22,11 +22,11 @@ armprofiler = Profile3(a_t = 0.05,
                        smoother = armsmoother)
 
 # Local path planner objects
-iter = 50000
+iter = 500000
 
 platform2configuration = PlanPlatform2Configuration(graph = TbPlatformPoseGraph(goal_dist = 0.03, 
                                                                                 goal_skew = 3, 
-                                                                                directions = [0.05,0.05,0.05,5,5,5], #
+                                                                                directions = [0.05,0.05,0.01,2.5,0,0], #[0.05,0.05,0.01,1,1,1]
                                                                                 iter_max = iter),
                                                     profiler = platformprofiler,
                                                     workspace = TbWorkspace(padding = [-0.1,-0.1,0,-150,-150,-90],
@@ -40,7 +40,7 @@ platform2gripper = PlanPlatform2Gripper(graph = TbPlatformAlignGraph(goal_skew =
                                         profiler = platformprofiler)
 
 platform2hold = PlanPlatform2Hold(graph = TbPlatformAlignGraph(goal_skew = 3, 
-                                                               directions = [0.05,0.05,0.05,5,5,5], 
+                                                               directions = [0.05,0.05,0.05,2.5,2.5,2.5], 
                                                                iter_max = iter),
                                   profiler = platformprofiler)
 
@@ -56,9 +56,23 @@ localplanner = PlanPickAndPlace2(
                     arm2pose               = arm2pose)
 
 # load assets
-tbot = TbTetherbot.load(os.path.join(os.path.dirname(__file__), 'data/tetherbot.pkl'))
+tbot: TbTetherbot = TbTetherbot.load(os.path.join(os.path.dirname(__file__), 'data/tetherbot.pkl'))
 
+grip_idx = 3
+hold_idx = 14
+#start = [15, 10, 14,  0, 12]
+#pose = [2.93700e-01, 4.01000e-01, 2.10000e-03, 1.82850e+00, 1.62010e+00, 9.04245e+01]
+#tbot.place_all(start)
+#tbot.platform.T_local = TransformMatrix(pose)
+
+""" pose = [3.45478497e-01, 1.03886540e+00, 2.37313172e-02, 1.82850000e+00, 1.62010000e+00, 8.04245000e+01]
+tbot.platform.T_local = TransformMatrix(pose)
+print(tbot.stability())
+
+vi = TetherbotVisualizer(tbot)
+vi.run() """
+      
 # motion planning
-_, commands, exitflag = localplanner.plan(tbot, grip_idx=1, hold_idx=3, start_state=0, goal_state=10, commands=CommandList())
+_, commands, exitflag = localplanner.plan(tbot, grip_idx=grip_idx, hold_idx=hold_idx, start_state=0, goal_state=10, commands=CommandList())
 
 commands.save(os.path.join(os.path.dirname(__file__), 'data/commands.pkl'), overwrite=True)
