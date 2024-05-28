@@ -10,7 +10,7 @@ commands = CommandList.load(os.path.join(os.path.dirname(__file__), 'data/comman
 
 vi = TetherbotVisualizer(tbot)
 
-sleep(5)
+#sleep(5)
 
 done = True
 counter = 0

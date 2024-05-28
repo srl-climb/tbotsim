@@ -4,7 +4,7 @@ import os
 
 grid = cylindricalgrid([0,0.5,1,1.5,2,2.5], [0,0.5,1,1.5,2,2.5], 4)
 grid = np.column_stack((grid[0:3,:].T, np.zeros((grid.shape[1],1)), grid[3,:], np.zeros((grid.shape[1],1))))
-pose = [0.5,0.5,0.02,grid[6,4],0,90]
+pose = [0.5,0.5,0.05,grid[6,4],0,90]
 start    = [8,2,14,0,12]
 """ pose = [2,2,-0.5,0,grid[27,4],0]
 print(pose)
@@ -25,11 +25,12 @@ platform.arm.T_local.translate([0,0,0.05])
 platform.arm._workspace_radius = 0.9
 
 platform.add_geometry(TbBox([0.4,0.3,0.1], T_local = TransformMatrix([-0.2,-0.15,-0.05])))
-holds    = TbHold.batch(grid, hoverpoint = [0,0,0.05],  grippoint = [0,0,0])
+platform.add_collidable(TbBoxCollidable([0.5,0.4,0.11], T_local = TransformMatrix([-0.25,-0.2,-0.055])))
+holds    = TbHold.batch(grid, hoverpoint = [0,0,0.1],  grippoint = [0,0,0.05])
 
 for hold, g in zip(holds, grid):
     hold.remove_geometries()
-    hold.add_geometry(TbCylinder(radius = 0.05, height = 0.03, T_local = TransformMatrix([0,0,-0.05])))
+    hold.add_geometry(TbCylinder(radius = 0.05, height = 0.03, T_local = TransformMatrix([0,0,0*-0.05])))
 
 grippers = []
 for _ in range(5):
@@ -45,13 +46,16 @@ for tether in tethers:
     tether.add_geometry(TbTethergeometry(radius = 0.008))
 
 wall = TbWall(holds=holds)
+wall.add_geometry(TbCylinder(3.985, 3, 1, 100, T_local = TransformMatrix([0,1.25,-4,90,0,0])))
+wall.add_collidable(TbCylinderCollidable(4, 3, 1, 20, T_local = TransformMatrix([0,1.25,-4,90,0,0])))
 tbot = TbTetherbot(platform=platform, grippers=grippers, tethers=tethers, wall=wall, W=W, mapping=mapping, aorder=aorder)
 tbot._tether_collision_margin = 0.05
 tbot._l_min = 0.05
 tbot.platform.arm.links[-1].qlim = [0,0.2]
 tbot.platform.arm.links[-1].q = -0.1
+tbot.platform.arm.qs = tbot.platform.arm.qlims[:,0]
 tbot.platform.T_local= TransformMatrix(pose)
-tbot.place_all(start)
+tbot.place_all(start, correct_pose=True)
 
 print(tbot.stability())
 tbot.save(os.path.join(os.path.dirname(__file__), 'data/tetherbot.pkl'), overwrite=True)
@@ -63,5 +67,6 @@ print(tbot.platform.arm.valid(qs))
 tbot.platform.arm.qs = qs
  """
 
-vi = TetherbotVisualizer(tbot)
-vi.run()
+""" vi = TetherbotVisualizer(tbot)
+vi.run() """
+

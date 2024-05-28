@@ -5,8 +5,16 @@ import os
 start = [8,2,14,0,12]
 goal = [9,3,15,1,13]
 
-#to do
-# debut mode 3d
+# Feasiblity checks
+arm_feasibility = FeasibilityContainer()
+arm_feasibility.add(TbJointLimitFeasibility())
+arm_feasibility.add(TbArmTetherDistanceFeasibility(distance = 0.05))
+
+platform_feasibility = FeasibilityContainer()
+platform_feasibility.add(TbTetherLengthFeasibility())
+platform_feasibility.add(TbGripperPlatformDistanceFeasibility(distance = 0.26))
+platform_feasibility.add(TbWallPlatformCollisionFeasibility(0))
+platform_feasibility.add(TbWrenchFeasibility(10, 6, threshold = 0.5))
 
 # Simulation timestep
 dt = 0.0167
@@ -30,27 +38,32 @@ armprofiler = Profile3(a_t = 0.05,
 
 # Local path planner objects
 iter = 50000
-platform2configuration = PlanPlatform2Configuration(graph = TbPlatformPoseGraph(goal_dist = 0.03, 
+platform2configuration = PlanPlatform2Configuration(graph = TbPlatformPoseGraph(feasiblity = platform_feasibility,
+                                                                                goal_dist = 0.03, 
                                                                                 goal_skew = 3, 
                                                                                 directions = [0.05,0.05,0.01,2.5,0,0], #
                                                                                 iter_max = iter),
                                                     profiler = platformprofiler,
-                                                    workspace = TbWorkspace(padding = [-0.1,-0.1,0,-180,-180,-90],
+                                                    workspace = TbWorkspace(feasibility = platform_feasibility,
+                                                                            padding = [-0.1,-0.1,0,-180,-180,-90],
                                                                             mode_2d = True,
                                                                             scale = [0.1,0.1,99,99,99,10], 
-                                                                            mode = 'max'))
+                                                                            mode = 'first'))
 
-platform2gripper = PlanPlatform2Gripper(graph = TbPlatformAlignGraph(goal_skew = 3, 
+platform2gripper = PlanPlatform2Gripper(graph = TbPlatformAlignGraph(feasiblity = platform_feasibility,
+                                                                     goal_skew = 3, 
                                                                      directions = [0.05,0.05,0.05,2.5,2.5,2.5], 
                                                                      iter_max = iter),
                                         profiler = platformprofiler)
 
-platform2hold = PlanPlatform2Hold(graph = TbPlatformAlignGraph(goal_skew = 3, 
+platform2hold = PlanPlatform2Hold(graph = TbPlatformAlignGraph(feasiblity = platform_feasibility,
+                                                               goal_skew = 3, 
                                                                directions = [0.05,0.05,0.05,2.5,2.5,2.5], 
                                                                iter_max = iter),
                                   profiler = platformprofiler)
 
-arm2pose = PlanArm2Pose(graph = TbArmPoseGraph(goal_dist = 0.05,
+arm2pose = PlanArm2Pose(graph = TbArmPoseGraph(feasiblity = arm_feasibility,
+                                               goal_dist = 0.05,
                                                directions = [0.05,0.05,0.01], 
                                                iter_max = iter),
                         profiler = armprofiler)
@@ -63,21 +76,23 @@ localplanner = PlanPickAndPlace2(
 
 # Global path planner objects
 
-platform2gripper = PlanPlatform2Gripper(graph = TbPlatformAlignGraph(goal_skew = 3, 
+platform2gripper = PlanPlatform2Gripper(graph = TbPlatformAlignGraph(feasiblity = platform_feasibility,
+                                                                     goal_skew = 3, 
                                                                      directions = [0.0,0.0,0.0,2.5,2.5,2.5], 
                                                                      iter_max = 50),
                                         profiler = platformprofiler)
 
-platform2hold = PlanPlatform2Hold(graph = TbPlatformAlignGraph(goal_skew = 3, 
+platform2hold = PlanPlatform2Hold(graph = TbPlatformAlignGraph(feasiblity = platform_feasibility,
+                                                               goal_skew = 3, 
                                                                directions = [0.0,0.0,0.0,2.5,2.5,2.5], 
                                                                iter_max = 50),
                                   profiler = platformprofiler)
 
 globalplanner = GlobalPlanner(graph = TbGlobalGraph2(goal_dist = 0.01,
-                                                     cost = 0.05, 
                                                      platform2hold = platform2hold,
                                                      platform2gripper = platform2gripper,
-                                                     workspace = TbWorkspace(padding = [-0.1,-0.1,0,-180,-180,-90], #45
+                                                     workspace = TbWorkspace(feasibility = platform_feasibility,
+                                                                             padding = [-0.1,-0.1,0,-180,-180,-90], #45
                                                                              mode_2d = True,
                                                                              scale = [0.1,0.1,99,99,99,10], #0.2, 45
                                                                              mode = 'first'),

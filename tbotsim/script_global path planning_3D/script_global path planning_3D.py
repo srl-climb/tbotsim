@@ -71,7 +71,6 @@ platform2hold = PlanPlatform2Hold(graph = TbPlatformAlignGraph(goal_skew = 2.5,
                                   profiler = platformprofiler)
 
 globalplanner = GlobalPlanner(graph = TbGlobalGraph2(goal_dist = 0.01,
-                                                     cost = 0.0, #0.05
                                                      platform2hold = platform2hold,
                                                      platform2gripper = platform2gripper,
                                                      workspace = TbWorkspace(padding = [-0.1,-0.1,0,-180,-180,-90], #45
