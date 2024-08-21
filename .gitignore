@@ -8,3 +8,7 @@ tbotsim/commands2.yaml
 tbotsim/commands_2.yaml
 tbotsim/commands_2.yaml
 tbotsim/commands_2.yaml
+tbotsim/script_command player/commands/commands.yaml
+tbotsim/script_command player/commands/commands2.yaml
+tbotsim/script_command player/commands/commands_1.yaml
+tbotsim/script_command player/commands/commands_global.yaml
