@@ -78,20 +78,21 @@ for i in range(10):
 # create tetherbot file
 mapping = [[0,0],[1,1],[2,2],[3,3],[4,4],[0,5],[1,6],[2,7],[3,8],[4,9]]
 aorder = Ring([4,3,2,1,0]) #indices of the grippers counter clockwise 
-W = hyperRectangle(np.array([2,2,0,0,0,0.22]), np.array([-2,-2,-0,-0,-0,-0.22]))
+W = TbRectangleWrenchSet([2,2,0,0,0,0.22], [-2,-2,-0,-0,-0,-0.22])
+F = TbTetherForceSet(0, 150)
 tbot = TbTetherbot(platform = platform, grippers = grippers, tethers = tethers, wall = wall, 
                    mode_2d = True, 
                    mapping = mapping,
                    aorder = aorder, 
                    W = W,
-                   tether_collision_margin = 0.055,
+                   F = F,
                    l_min = 0.12,
                    l_max = 2)
 tbot.place_all([0,1,2,3,4])
 tbot.save(os.path.join(absolute_path, 'pickle/tetherbot.pkl'), overwrite = True)
 
-vi = TetherbotVisualizer(tbot)
-vi.run()
+""" vi = TetherbotVisualizer(tbot)
+vi.run() """
 
 # create urdf files
 tb2urdf(tbot, prefix = '', stlpath = 'package://tbotros_description/desc/', filepath = os.path.join(absolute_path, 'urdf'))
@@ -101,7 +102,7 @@ tbot_light = TbTetherbot(platform = platform, grippers = grippers, tethers = tet
                    mapping = mapping,
                    aorder = aorder, 
                    W = W,
-                   tether_collision_margin = 0.055,
+                   F = F,
                    l_min = 0.12,
                    l_max = 2)
 tbot_light.remove_all_geometries()

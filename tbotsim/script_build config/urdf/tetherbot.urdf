@@ -22,6 +22,15 @@
   <origin xyz="0.0 0.0 0.0" rpy="0.0 -0.0 0.0"/> 
  </joint> 
 
+ <link name="tetherforceset0"> 
+ </link> 
+
+ <joint name="map_to_tetherforceset0" type="fixed"> 
+  <parent link="map"/> 
+  <child link="tetherforceset0"/> 
+  <origin xyz="0.0 0.0 0.0" rpy="0.0 -0.0 0.0"/> 
+ </joint> 
+
  <link name="gripper0"> 
  </link> 
 
@@ -277,6 +286,15 @@
  <joint name="platform0_to_trianglemesh15" type="fixed"> 
   <parent link="platform0"/> 
   <child link="trianglemesh15"/> 
+  <origin xyz="0.0 0.0 0.0" rpy="0.0 -0.0 0.0"/> 
+ </joint> 
+
+ <link name="rectanglewrenchset0"> 
+ </link> 
+
+ <joint name="platform0_to_rectanglewrenchset0" type="fixed"> 
+  <parent link="platform0"/> 
+  <child link="rectanglewrenchset0"/> 
   <origin xyz="0.0 0.0 0.0" rpy="0.0 -0.0 0.0"/> 
  </joint> 
 

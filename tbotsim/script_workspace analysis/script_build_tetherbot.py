@@ -52,7 +52,7 @@ for _ in range(5):
     
 #
 wall = TbWall(holds=holds)
-wall.add_geometry(TbBox([1.2,1.2,0.02], T_local = TransformMatrix([-0.1,-0.1,-0.035,0,0,0])))
+#wall.add_geometry(TbBox([1.2,1.2,0.02], T_local = TransformMatrix([-0.1,-0.1,-0.035,0,0,0])))
 #wall.add_collidable(TbCylinderCollidable(4.015, 3, 1, 50, T_local = TransformMatrix([0,1.25,-4,90,0,0])))
 
 #

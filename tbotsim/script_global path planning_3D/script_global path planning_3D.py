@@ -1,4 +1,3 @@
-
 from tbotlib import * 
 import os
 
@@ -16,7 +15,7 @@ arm_feasibility.add(TbTetherArmCollisionFeasibility(distance = 0.02))
 platform_feasibility = FeasibilityContainer()
 platform_feasibility.add(TbWallPlatformCollisionFeasibility(distance = 0))
 platform_feasibility.add(TbGripperPlatformCollisionFeasibility(distance = 0))
-platform_feasibility.add(TbWrenchFeasibility(threshold = 1.00))
+platform_feasibility.add(TbWrenchFeasibility(threshold = 2.00))
 
 # Simulation timestep
 dt = 0.0167
@@ -26,11 +25,6 @@ platformsmoother = BsplineSmoother(0.003, k=3)
 armsmoother = BsplineSmoother(0.005, k=3)
 
 # workspace
-workspace = TbWorkspace(feasibility = platform_feasibility,
-                        padding = [-0.1,-0.1,0,-180,-180,-90],
-                        mode_2d = True,
-                        scale = [0.1,0.1,99,99,99,5], 
-                        mode = 'first')
 workspace = TbWorkspace2(stepsize=[0.02,0.02,0.02,0,0,5], stepnum=[5,5,1,0,0,5], feasibility=platform_feasibility)
 
 # Profile generators
@@ -71,7 +65,7 @@ platform2hold = PlanPlatform2Hold(graph = TbPlatformAlignGraph(feasiblity = plat
 arm2pose = PlanArm2Pose(graph = TbArmPoseGraph(feasiblity = arm_feasibility,
                                                goal_dist = 0.072,
                                                directions = [0.05,0.05,0.02], 
-                                               iter_max = iter),
+                                               iter_max = 100000),
                         profiler = armprofiler)
 
 localplanner = PlanPickAndPlace2(
@@ -98,10 +92,12 @@ step_feasiblity = FeasibilityContainer()
 step_feasiblity.add(StepDistanceFeasibility(distance=1.05))
 step_feasiblity.add(StepPathFeasibility(platform2gripper = platform2gripper, platform2hold = platform2hold))
 stance_feasbility = FeasibilityContainer()
-stance_feasbility.add(StanceGeometricFeasibility(min_width = 0.55, max_width = 1.6))
+stance_feasbility.add(StanceGeometricFeasibility(min_width = 0.55, max_width = 1.55))
 stance_feasbility.add(StanceWrenchFeasiblity(workspace = workspace))
 
-stepplanner = GlobalPlanner(graph = TbStepGraph(goal_dist = 0.01,
+stepplanner = GlobalPlanner(graph = TbStepGraph(heuristic = StanceDisplacementMetric(),
+                                                cost = ConstantMetric(0.025),
+                                                goal_dist = 0.01,
                                                 step_feasibility = step_feasiblity,
                                                 stance_feasibility = stance_feasbility,
                                                 iter_max = 5000),
@@ -112,6 +108,7 @@ stepplanner = GlobalPlanner(graph = TbStepGraph(goal_dist = 0.01,
 tbot: TbTetherbot = TbTetherbot.load(os.path.join(os.path.dirname(__file__), 'data/tetherbot.pkl'))
 
 tbot.place_all(start)
+
 feasibility, pose = workspace.calculate(tbot)
 
 if not feasibility:
@@ -121,6 +118,12 @@ else:
     print(pose)
     tbot.platform.T_local = TransformMatrix(pose)
 
+profiler = Profiler()
+profiler.on()
+
 commands = stepplanner.plan(tbot, start, goal, commands=CommandList())[1]
 
-commands.save(os.path.join(os.path.dirname(__file__), 'data/commands.pkl'), overwrite=True)
+profiler.off()
+profiler.print()
+
+#commands.save(os.path.join(os.path.dirname(__file__), 'data/commands.pkl'), overwrite=True)
